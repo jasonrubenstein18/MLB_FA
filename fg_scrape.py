@@ -6,8 +6,7 @@ import numpy as np
 import time
 
 
-
-# Scrape Baseball Reference for MLB Data (incl. but not limited to WAR, OPS, HR, etc.)
+# Scrape Fangraphs for MLB Data (incl. but not limited to WAR, OPS, etc.)
 years = [2016, 2017, 2018, 2019, 2020]
 
 appended_data = pd.DataFrame()
