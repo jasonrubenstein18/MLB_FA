@@ -1,0 +1,244 @@
+Gm#,Year,Date,Month,,Tm,,Opp,W/L,R,RA,Inn,W-L,Rank,GB,Win,Loss,Save,Time,D/N,Attendance,DATE,OPP,Play,RESULT,AB,R,H,2B,3B,HR,RBI,BB,SO,SB,CS,OBP,SLG,OPS,AVG
+3,2016,"Thursday, Apr 7",April,boxscore,WSN,,MIA,L,4,6,,2-1,1,up 0.5,Phelps,Roark,Ramos,3:32,0,"41,650",7-Apr,vs MIA,1,LÊ6-4,3,2,1,0,0,1,1,2,0,0,0,0.5,0.9,1.4,0.3
+4,2016,"Sunday, Apr 10",April,boxscore,WSN,,MIA,W,4,2,,3-1,1,up 1.5,Ross,Koehler,Papelbon,2:52,0,"24,593",10-Apr,vs MIA,1,WÊ4-2,3,1,2,2,0,0,1,1,0,0,0,0.556,1,1.556,0.385
+5,2016,"Monday, Apr 11",April,boxscore,WSN,,ATL,W,6,4,,4-1,1,up 2.0,Scherzer,Norris,Papelbon,3:05,1,"18,119",11-Apr,vs ATL,1,WÊ6-4,3,1,0,0,0,0,0,2,1,2,0,0.522,0.813,1.335,0.313
+6,2016,"Tuesday, Apr 12",April,boxscore,WSN,,ATL,W,2,1,,5-1,1,up 2.0,Treinen,Johnson,Rivero,2:47,1,"18,378",12-Apr,vs ATL,1,WÊ2-1,4,0,1,1,0,0,2,0,0,0,0,0.481,0.75,1.231,0.3
+7,2016,"Wednesday, Apr 13",April,boxscore,WSN,,ATL,W,3,0,,6-1,1,up 3.0,Roark,Wisler,Papelbon,2:12,1,"19,400",13-Apr,vs ATL,1,WÊ3-0,4,0,0,0,0,0,0,0,2,0,0,0.419,0.625,1.044,0.25
+8,2016,"Thursday, Apr 14",April,boxscore,WSN,,ATL,W,6,2,,7-1,1,up 3.0,Strasburg,Teheran,,2:29,0,"21,144",14-Apr,vs ATL,1,WÊ6-2,4,1,1,0,0,1,4,0,0,0,0,0.4,0.679,1.079,0.25
+16,2016,"Friday, Apr 22",April,boxscore,WSN,,MIN,W,8,4,,12-4,1,up 3.5,Gonzalez,Gibson,,2:51,1,"27,684",22-Apr,vs MIN,1,WÊ8-4,4,1,0,0,0,0,0,1,1,0,0,0.391,0.789,1.18,0.298
+17,2016,"Saturday, Apr 23",April,boxscore,WSN,,MIN,W,2,0,,13-4,1,up 3.5,Roark,Hughes,Papelbon,2:39,0,"35,974",23-Apr,vs MIN,1,WÊ2-0,4,1,2,2,0,0,0,0,1,0,0,0.397,0.803,1.2,0.311
+18,2016,"Sunday, Apr 24",April,boxscore,WSN,,MIN,W-wo,6,5,16,14-4,1,up 3.5,Perez,Tonkin,,5:56,0,"35,397",24-Apr,vs MIN,1,WÊ6-5,1,1,1,0,0,1,1,0,0,0,0,0.405,0.855,1.26,0.323
+19,2016,"Tuesday, Apr 26",April,boxscore,WSN,,PHI,L,3,4,,14-5,1,up 2.0,Velasquez,Perez,Gomez,3:25,1,"25,097",26-Apr,vs PHI,1,LÊ4-3,2,0,1,0,0,0,1,3,0,0,0,0.43,0.844,1.274,0.328
+20,2016,"Wednesday, Apr 27",April,boxscore,WSN,,PHI,L,0,3,,14-6,1,up 1.0,Hellickson,Gonzalez,Gomez,2:59,1,"24,186",27-Apr,vs PHI,1,LÊ3-0,2,0,0,0,0,0,0,2,1,1,0,0.434,0.818,1.252,0.318
+21,2016,"Thursday, Apr 28",April,boxscore,WSN,,PHI,L,0,3,,14-7,1,up 0.5,Araujo,Rivero,Gomez,2:59,0,"22,112",28-Apr,vs PHI,1,LÊ3-0,4,0,1,0,0,0,0,0,2,1,0,0.425,0.786,1.211,0.314
+32,2016,"Monday, May 9",May,boxscore,WSN,,DET,W-wo,5,4,,20-12,2,0.5,Kelley,Lowe,,2:57,1,"27,153",9-May,vs DET,1,WÊ5-4,2,0,0,0,0,0,0,2,1,0,0,0.434,0.62,1.054,0.26
+33,2016,"Tuesday, May 10",May,boxscore,WSN,,DET,L,4,5,,20-13,2,0.5,Fulmer,Ross,Rodriguez,3:16,1,"24,476",10-May,vs DET,1,LÊ5-4,3,1,0,0,0,0,0,2,2,0,0,0.433,0.602,1.035,0.252
+34,2016,"Wednesday, May 11",May,boxscore,WSN,,DET,W,3,2,,21-13,2,0.5,Scherzer,Zimmermann,,2:38,1,"35,695",11-May,vs DET,1,WÊ3-2,3,0,2,0,0,0,0,1,1,0,1,0.441,0.604,1.045,0.264
+35,2016,"Friday, May 13",May,boxscore,WSN,,MIA,W,5,3,,22-13,1,up 1.0,Treinen,Barraclough,Papelbon,3:19,1,"28,232",13-May,vs MIA,1,WÊ5-3,2,1,2,0,0,1,2,2,0,0,0,0.456,0.639,1.095,0.278
+36,2016,"Saturday, May 14 (1)",May,boxscore,WSN,,MIA,W,6,4,,23-13,1,up 1.0,Strasburg,Nicolino,Papelbon,3:22,0,"28,634",14-May,vs MIA,1,WÊ6-4,2,1,0,0,0,0,0,3,0,1,0,0.461,0.627,1.088,0.273
+37,2016,"Saturday, May 14 (2)",May,boxscore,WSN,,MIA,L,1,7,,23-14,1,up 1.0,Urena,Roark,,2:55,1,"30,019",14-May,vs MIA,0,LÊ7-1,Did not play,,,,,,,,,,,,,,
+38,2016,"Sunday, May 15",May,boxscore,WSN,,MIA,L,1,5,,23-15,1,up 1.0,Fernandez,Ross,Ramos,3:03,0,"36,786",15-May,vs MIA,1,LÊ5-1,3,0,0,0,0,0,0,1,1,0,0,0.456,0.611,1.067,0.265
+45,2016,"Monday, May 23",May,boxscore,WSN,,NYM,L,1,7,,27-18,1,up 0.5,Colon,Gonzalez,,2:33,1,"31,264",23-May,vs NYM,1,LÊ7-1,4,0,0,0,0,0,0,0,0,0,0,0.441,0.548,0.989,0.252
+46,2016,"Tuesday, May 24",May,boxscore,WSN,,NYM,W,7,4,,28-18,1,up 1.5,Strasburg,Harvey,,2:48,1,"33,096",24-May,vs NYM,1,WÊ7-4,3,0,0,0,0,0,1,0,0,0,0,0.432,0.536,0.968,0.246
+47,2016,"Wednesday, May 25",May,boxscore,WSN,,NYM,L,0,2,,28-19,1,up 0.5,Matz,Roark,Familia,2:38,0,"38,700",25-May,vs NYM,1,LÊ2-0,1,0,0,0,0,0,0,0,0,0,0,0.43,0.532,0.962,0.245
+48,2016,"Thursday, May 26",May,boxscore,WSN,,STL,W,2,1,,29-19,1,up 1.0,Ross,Leake,Papelbon,2:27,1,"26,176",26-May,vs STL,1,WÊ2-1,4,1,1,0,0,1,1,0,2,0,0,0.426,0.545,0.971,0.245
+49,2016,"Friday, May 27",May,boxscore,WSN,,STL,L,2,6,,29-20,1,Tied,Garcia,Scherzer,,2:32,1,"30,781",27-May,vs STL,1,LÊ6-2,4,1,1,0,0,0,0,0,1,0,0,0.423,0.537,0.96,0.245
+50,2016,"Saturday, May 28",May,boxscore,WSN,,STL,L,4,9,,29-21,1,Tied,Wainwright,Gonzalez,,3:00,1,"38,274",28-May,vs STL,1,LÊ9-4,4,1,1,0,0,1,1,0,0,0,0,0.42,0.55,0.97,0.245
+51,2016,"Sunday, May 29",May,boxscore,WSN,,STL,W,10,2,,30-21,1,up 1.0,Strasburg,Wacha,,3:12,0,"38,898",29-May,vs STL,1,WÊ10-2,4,1,1,0,0,0,1,0,1,0,0,0.416,0.542,0.958,0.245
+61,2016,"Friday, Jun 10",June,boxscore,WSN,,PHI,W,9,6,,37-24,1,up 2.5,Strasburg,Hellickson,Papelbon,2:53,1,"37,941",10-Jun,vs PHI,1,WÊ9-6,2,1,0,0,0,0,0,2,0,0,0,0.41,0.514,0.924,0.254
+62,2016,"Saturday, Jun 11",June,boxscore,WSN,,PHI,W,8,0,,38-24,1,up 3.5,Roark,Nola,,2:56,0,"38,044",11-Jun,vs PHI,1,WÊ8-0,4,0,1,0,0,0,1,1,1,0,0,0.41,0.508,0.918,0.254
+63,2016,"Sunday, Jun 12",June,boxscore,WSN,,PHI,W-wo,5,4,,39-24,1,up 4.5,Papelbon,Gomez,,2:56,0,"34,294",12-Jun,vs PHI,1,WÊ5-4,1,1,1,0,0,0,0,0,0,0,0,0.412,0.511,0.923,0.258
+64,2016,"Monday, Jun 13",June,boxscore,WSN,,CHC,W,4,1,,40-24,1,up 5.0,Scherzer,Hendricks,Kelley,2:44,1,"37,187",13-Jun,vs CHC,1,WÊ4-1,5,0,1,0,0,0,0,0,0,0,0,0.408,0.503,0.911,0.256
+65,2016,"Tuesday, Jun 14",June,boxscore,WSN,,CHC,L,3,4,,40-25,1,up 5.0,Rondon,Solis,,3:03,1,"41,955",14-Jun,vs CHC,1,LÊ4-3,2,1,0,0,0,0,0,2,0,0,0,0.409,0.497,0.906,0.254
+66,2016,"Wednesday, Jun 15",June,boxscore,WSN,,CHC,W-wo,5,4,12,41-25,1,up 5.0,Petit,Cahill,,4:17,0,"42,000",15-Jun,vs CHC,1,WÊ5-4,4,1,0,0,0,0,0,1,1,0,0,0.405,0.488,0.893,0.249
+77,2016,"Monday, Jun 27",June,boxscore,WSN,,NYM,W,11,4,,45-32,1,up 3.5,Ross,Syndergaard,,3:33,1,"33,109",27-Jun,vs NYM,1,WÊ11-4,3,0,2,0,0,0,1,2,0,1,0,0.401,0.48,0.881,0.254
+78,2016,"Tuesday, Jun 28",June,boxscore,WSN,,NYM,W,5,0,,46-32,1,up 4.5,Perez,Harvey,,2:47,1,"29,918",28-Jun,vs NYM,1,WÊ5-0,4,2,2,1,0,1,2,0,0,0,0,0.403,0.496,0.899,0.258
+79,2016,"Wednesday, Jun 29",June,boxscore,WSN,,NYM,W,4,2,,47-32,1,up 5.5,Scherzer,Verrett,Kelley,3:01,1,"33,386",29-Jun,vs NYM,1,WÊ4-2,2,1,0,0,0,0,0,2,0,0,0,0.404,0.492,0.896,0.256
+80,2016,"Thursday, Jun 30",June,boxscore,WSN,,CIN,W,13,4,,48-32,1,up 6.0,Gonzalez,Finnegan,,3:07,1,"29,386",30-Jun,vs CIN,0,WÊ13-4,Did not play,,,,,,,,,,,,,,
+81,2016,"Friday, Jul 1",July,boxscore,WSN,,CIN,W-wo,3,2,14,49-32,1,up 6.0,Petit,Ohlendorf,,4:30,1,"27,631",1-Jul,vs CIN,1,WÊ3-2,6,0,2,0,0,0,0,0,1,0,0,0.402,0.488,0.89,0.258
+82,2016,"Saturday, Jul 2",July,boxscore,WSN,,CIN,L,4,9,10,49-33,1,up 5.0,Smith,Solis,,3:35,1,"35,195",2-Jul,vs CIN,1,LÊ9-4,4,0,1,0,0,0,1,1,0,1,0,0.402,0.485,0.887,0.258
+83,2016,"Sunday, Jul 3",July,boxscore,WSN,,CIN,W,12,1,,50-33,1,up 5.0,Strasburg,Lamb,,3:08,0,"37,328",3-Jul,vs CIN,1,WÊ12-1,4,1,2,0,0,1,1,0,0,0,0,0.405,0.496,0.901,0.261
+84,2016,"Monday, Jul 4",July,boxscore,WSN,,MIL,L,0,1,,50-34,1,up 4.0,Guerra,Scherzer,Jeffress,3:01,0,"29,174",4-Jul,vs MIL,1,LÊ1-0,3,0,0,0,0,0,0,1,1,0,0,0.404,0.491,0.895,0.258
+85,2016,"Tuesday, Jul 5",July,boxscore,WSN,,MIL,L,2,5,,50-35,1,up 4.0,Davies,Gonzalez,Jeffress,2:52,1,"25,138",5-Jul,vs MIL,1,LÊ5-2,4,0,1,0,0,0,0,0,1,0,0,0.402,0.487,0.889,0.258
+86,2016,"Wednesday, Jul 6",July,boxscore,WSN,,MIL,W,7,4,,51-35,1,up 4.0,Roark,Garza,Papelbon,2:47,0,"26,330",6-Jul,vs MIL,1,WÊ7-4,4,1,1,0,0,1,3,0,0,0,0,0.4,0.495,0.895,0.258
+91,2016,"Friday, Jul 15",July,boxscore,WSN,,PIT,W,5,1,,55-36,1,up 6.0,Strasburg,Liriano,,2:43,1,"36,982",15-Jul,vs PIT,1,WÊ5-1,3,0,0,0,0,0,0,1,0,1,0,0.398,0.486,0.884,0.253
+92,2016,"Saturday, Jul 16",July,boxscore,WSN,,PIT,W,6,0,,56-36,1,up 7.0,Roark,Cole,,2:36,1,"38,861",16-Jul,vs PIT,1,WÊ6-0,4,0,1,0,0,0,0,0,1,0,0,0.396,0.483,0.879,0.253
+93,2016,"Sunday, Jul 17",July,boxscore,WSN,,PIT,L,1,2,18,56-37,1,up 6.0,Niese,Perez,,5:48,0,"32,775",17-Jul,vs PIT,1,LÊ2-1,6,0,1,0,0,0,0,1,1,0,0,0.394,0.477,0.871,0.252
+94,2016,"Tuesday, Jul 19",July,boxscore,WSN,,LAD,L,4,8,,56-38,1,up 4.5,Kazmir,Lopez,,3:14,1,"38,747",19-Jul,vs LAD,1,LÊ8-4,4,0,0,0,0,0,0,0,0,0,0,0.39,0.471,0.861,0.248
+95,2016,"Wednesday, Jul 20",July,boxscore,WSN,,LAD,W,8,1,,57-38,1,up 5.5,Gonzalez,Norris,,2:57,1,"34,050",20-Jul,vs LAD,1,WÊ8-1,3,2,1,0,0,1,2,1,2,0,0,0.391,0.479,0.87,0.249
+96,2016,"Thursday, Jul 21",July,boxscore,WSN,,LAD,L,3,6,,57-39,1,up 4.5,Liberatore,Strasburg,Jansen,3:35,0,"38,586",21-Jul,vs LAD,1,LÊ6-3,3,0,1,0,0,0,1,1,2,0,0,0.391,0.478,0.869,0.25
+97,2016,"Friday, Jul 22",July,boxscore,WSN,,SDP,L,3,5,,57-40,1,up 4.5,Perdomo,Roark,Maurer,2:58,1,"31,618",22-Jul,vs SD,1,LÊ5-3,3,1,0,0,0,0,0,1,2,1,0,0.39,0.473,0.863,0.248
+98,2016,"Saturday, Jul 23",July,boxscore,WSN,,SDP,W-wo,3,2,,58-40,1,up 4.5,Papelbon,Quackenbush,,3:01,1,"30,747",23-Jul,vs SD,1,WÊ3-2,4,0,0,0,0,0,0,0,1,0,0,0.386,0.467,0.853,0.245
+99,2016,"Sunday, Jul 24",July,boxscore,WSN,,SDP,L,6,10,,58-41,1,up 4.5,Buchter,Papelbon,,3:32,0,"30,663",24-Jul,vs SD,1,LÊ10-6,1,0,0,0,0,0,0,0,0,0,0,0.385,0.466,0.851,0.244
+109,2016,"Friday, Aug 5",August,boxscore,WSN,,SFG,W,5,1,,65-44,1,up 7.0,Gonzalez,Samardzija,,2:26,1,"34,036",5-Aug,vs SF,1,WÊ5-1,3,1,1,0,0,0,1,0,0,0,0,0.377,0.442,0.819,0.235
+110,2016,"Saturday, Aug 6",August,boxscore,WSN,,SFG,L,1,7,,65-45,1,up 7.0,Cain,Strasburg,,3:29,1,"36,404",6-Aug,vs SF,1,LÊ7-1,3,0,0,0,0,0,0,0,3,0,0,0.374,0.438,0.812,0.233
+111,2016,"Sunday, Aug 7",August,boxscore,WSN,,SFG,W,1,0,,66-45,1,up 7.0,Roark,Bumgarner,Melancon,2:43,0,"32,790",7-Aug,vs SF,0,WÊ1-0,Did not play,,,,,,,,,,,,,,
+112,2016,"Tuesday, Aug 9",August,boxscore,WSN,,CLE,L,1,3,,66-46,1,up 6.5,Bauer,Scherzer,Allen,2:55,1,"30,978",9-Aug,vs CLE,0,LÊ3-1,Did not play,,,,,,,,,,,,,,
+113,2016,"Wednesday, Aug 10",August,boxscore,WSN,,CLE,W,7,4,,67-46,1,up 7.5,Gonzalez,Tomlin,Melancon,2:52,0,"30,185",10-Aug,vs CLE,0,WÊ7-4,Did not play,,,,,,,,,,,,,,
+114,2016,"Friday, Aug 12",August,boxscore,WSN,,ATL,L,5,8,,67-47,1,up 7.5,Foltynewicz,Strasburg,Johnson,3:15,1,"29,089",12-Aug,vs ATL,0,LÊ8-5,Did not play,,,,,,,,,,,,,,
+115,2016,"Saturday, Aug 13",August,boxscore,WSN,,ATL,W,7,6,,68-47,1,up 8.5,Lopez,Whalen,Melancon,3:07,1,"38,490",13-Aug,vs ATL,0,WÊ7-6,Did not play,,,,,,,,,,,,,,
+116,2016,"Sunday, Aug 14",August,boxscore,WSN,,ATL,W,9,1,,69-47,1,up 8.5,Roark,Jenkins,,2:46,0,"29,107",14-Aug,vs ATL,1,WÊ9-1,3,2,1,1,0,0,1,1,1,0,0,0.375,0.44,0.815,0.234
+126,2016,"Wednesday, Aug 24",August,boxscore,WSN,,BAL,L,8,10,,73-53,1,up 7.0,Miley,Roark,,3:28,1,"39,100",24-Aug,vs BAL,1,LÊ10-8,5,1,2,0,0,0,0,0,3,0,0,0.386,0.455,0.841,0.249
+127,2016,"Thursday, Aug 25",August,boxscore,WSN,,BAL,W,4,0,,74-53,1,up 8.0,Scherzer,Jimenez,,2:43,1,"39,722",25-Aug,vs BAL,1,WÊ4-0,4,0,2,1,0,0,2,0,0,1,0,0.387,0.458,0.845,0.251
+128,2016,"Friday, Aug 26",August,boxscore,WSN,,COL,W,8,5,,75-53,1,up 8.0,Gonzalez,Hoffman,,3:04,1,"33,433",26-Aug,vs COL,1,WÊ8-5,4,1,2,1,1,0,2,0,0,0,0,0.388,0.466,0.854,0.254
+129,2016,"Saturday, Aug 27",August,boxscore,WSN,,COL,L,4,9,11,75-54,1,up 8.0,McGee,Petit,,4:49,0,"27,901",27-Aug,vs COL,1,LÊ9-4,4,1,1,1,0,0,1,1,3,0,0,0.388,0.466,0.854,0.254
+130,2016,"Sunday, Aug 28",August,boxscore,WSN,,COL,L,3,5,,75-55,1,up 8.0,Bettis,Giolito,Ottavino,2:52,0,"28,124",28-Aug,vs COL,1,LÊ5-3,4,1,1,0,0,1,1,0,0,0,0,0.387,0.471,0.858,0.254
+137,2016,"Monday, Sep 5",September,boxscore,WSN,,ATL,W,6,4,,80-57,1,up 8.5,Scherzer,Weber,,2:59,0,"26,005",5-Sep,vs ATL,0,WÊ6-4,Did not play,,,,,,,,,,,,,,
+138,2016,"Tuesday, Sep 6",September,boxscore,WSN,,ATL,W,9,7,,81-57,1,up 8.5,Glover,Ramirez,Melancon,3:38,1,"17,161",6-Sep,vs ATL,1,WÊ9-7,5,1,2,0,0,0,0,0,1,1,0,0.383,0.465,0.848,0.253
+139,2016,"Wednesday, Sep 7",September,boxscore,WSN,,ATL,W-wo,5,4,11,82-57,1,up 8.5,Latos,Bradley,,4:39,1,"19,894",7-Sep,vs ATL,1,WÊ5-4,5,0,1,0,0,0,0,1,2,0,0,0.382,0.462,0.844,0.252
+140,2016,"Thursday, Sep 8",September,boxscore,WSN,,PHI,L,1,4,,82-58,1,up 8.0,Asher,Cole,Gomez,2:48,1,"25,412",8-Sep,vs PHI,1,LÊ4-1,4,0,0,0,0,0,0,0,1,0,0,0.379,0.458,0.837,0.25
+141,2016,"Friday, Sep 9",September,boxscore,WSN,,PHI,W-wo,5,4,,83-58,1,up 8.0,Melancon,Herrmann,,3:31,1,"28,469",9-Sep,vs PHI,1,WÊ5-4,4,0,1,0,0,0,1,0,1,0,0,0.379,0.456,0.835,0.25
+142,2016,"Saturday, Sep 10",September,boxscore,WSN,,PHI,W,3,0,,84-58,1,up 9.0,Kelley,Garcia,Melancon,3:05,1,"36,152",10-Sep,vs PHI,1,WÊ3-0,4,1,1,0,0,1,3,0,3,0,0,0.378,0.461,0.839,0.25
+143,2016,"Sunday, Sep 11",September,boxscore,WSN,,PHI,W,3,2,,85-58,1,up 9.0,Gonzalez,Morgan,Melancon,2:49,0,"31,805",11-Sep,vs PHI,1,WÊ3-2,1,1,0,0,0,0,0,2,0,0,1,0.379,0.46,0.839,0.249
+144,2016,"Monday, Sep 12",September,boxscore,WSN,,NYM,W,8,1,,86-58,1,up10.0,Lopez,Montero,,3:08,1,"22,832",12-Sep,vs NYM,1,WÊ8-1,2,2,0,0,0,0,1,3,2,0,0,0.381,0.458,0.839,0.248
+145,2016,"Tuesday, Sep 13",September,boxscore,WSN,,NYM,L,3,4,10,86-59,1,up 9.0,Familia,Melancon,Blevins,3:22,1,"25,796",13-Sep,vs NYM,1,LÊ4-3,3,2,0,0,0,0,0,1,1,1,0,0.38,0.455,0.835,0.247
+146,2016,"Wednesday, Sep 14",September,boxscore,WSN,,NYM,W,1,0,,87-59,1,up10.0,Roark,Salas,Melancon,2:30,0,"29,669",14-Sep,vs NYM,1,WÊ1-0,2,0,0,0,0,0,0,1,1,0,1,0.38,0.453,0.833,0.246
+156,2016,"Monday, Sep 26",September,boxscore,WSN,,ARI,L,4,14,,91-65,1,up 8.5,Godley,Roark,,3:21,1,"18,707",26-Sep,vs ARI,0,LÊ14-4,Did not play,,,,,,,,,,,,,,
+157,2016,"Tuesday, Sep 27",September,boxscore,WSN,,ARI,W,4,2,,92-65,1,up 8.5,Scherzer,Delgado,Melancon,2:40,1,"24,297",27-Sep,vs ARI,0,WÊ4-2,Did not play,,,,,,,,,,,,,,
+158,2016,"Wednesday, Sep 28",September,boxscore,WSN,,ARI,L,0,3,6,92-66,1,up 7.5,Miller,Gonzalez,,1:55,1,"20,577",28-Sep,vs ARI,0,LÊ3-0,Did not play,,,,,,,,,,,,,,
+159,2016,"Thursday, Sep 29",September,boxscore,WSN,,ARI,W,5,3,,93-66,1,up 8.0,Lopez,Ray,Melancon,2:55,0,"21,618",29-Sep,vs ARI,0,WÊ5-3,Did not play,,,,,,,,,,,,,,
+160,2016,"Friday, Sep 30",September,boxscore,WSN,,MIA,L,4,7,,93-67,1,up 7.0,Dunn,Solis,Ramos,3:08,1,"30,857",30-Sep,vs MIA,1,LÊ7-4,4,0,0,0,0,0,0,0,4,0,0,0.372,0.441,0.813,0.242
+161,2016,"Saturday, Oct 1",October,boxscore,WSN,,MIA,W,2,1,,94-67,1,up 7.0,Roark,Chen,Melancon,3:03,0,"31,635",1-Oct,vs MIA,1,WÊ2-1,3,0,1,0,0,0,1,1,2,0,0,0.373,0.44,0.813,0.243
+162,2016,"Sunday, Oct 2",October,boxscore,WSN,,MIA,W,10,7,,95-67,1,up 8.0,Scherzer,Brice,Melancon,3:36,0,"28,730",2-Oct,vs MIA,1,WÊ10-7,4,1,1,1,0,0,0,1,2,0,0,0.373,0.441,0.814,0.243
+1,2015,"Monday, Apr 6",April,boxscore,WSN,,NYM,L,1,3,,0-1,3,1,Colon,Scherzer,Carlyle,2:35,0,"42,295",6-Apr,vs NYM,1,LÊ3-1,4,1,2,0,0,1,1,0,1,0,0,0.5,1.25,1.75,0.5
+2,2015,"Wednesday, Apr 8",April,boxscore,WSN,,NYM,W,2,1,,1-1,2,1.5,Zimmermann,deGrom,Storen,2:21,1,"25,999",8-Apr,vs NYM,1,WÊ2-1,3,0,2,0,0,0,0,1,1,0,0,0.625,1,1.625,0.571
+3,2015,"Thursday, Apr 9",April,boxscore,WSN,,NYM,L,3,6,,1-2,3,2,Harvey,Strasburg,,2:54,0,"25,327",9-Apr,vs NYM,1,LÊ6-3,4,0,0,0,0,0,0,0,3,0,0,0.417,0.636,1.053,0.364
+10,2015,"Thursday, Apr 16",April,boxscore,WSN,,PHI,W,5,2,,4-6,3,3,Fister,Hamels,Storen,2:16,1,"24,768",16-Apr,vs PHI,1,WÊ5-2,2,2,0,0,0,0,0,2,2,0,0,0.341,0.421,0.762,0.237
+11,2015,"Friday, Apr 17",April,boxscore,WSN,,PHI,W,7,2,,5-6,3,3,Scherzer,O'Sullivan,,2:38,1,"31,608",17-Apr,vs PHI,1,WÊ7-2,2,2,1,0,0,1,3,2,1,0,0,0.375,0.5,0.875,0.25
+12,2015,"Saturday, Apr 18",April,boxscore,WSN,,PHI,L,3,5,,5-7,3,4,Harang,Zimmermann,Papelbon,2:56,0,"35,330",18-Apr,vs PHI,1,LÊ5-3,3,1,2,0,0,1,1,1,0,0,0,0.404,0.581,0.985,0.279
+13,2015,"Sunday, Apr 19",April,boxscore,WSN,,PHI,W,4,1,,6-7,3,4,Strasburg,Buchanan,Storen,2:40,0,"36,631",19-Apr,vs PHI,1,WÊ4-1,2,0,0,0,0,0,0,2,1,0,0,0.411,0.556,0.967,0.267
+14,2015,"Tuesday, Apr 21",April,boxscore,WSN,,STL,W-wo,2,1,10,7-7,3,4,Barrett,Villanueva,,3:43,1,"27,021",21-Apr,vs STL,1,WÊ2-1,4,0,1,0,0,0,1,1,2,0,0,0.41,0.531,0.941,0.265
+15,2015,"Wednesday, Apr 22",April,boxscore,WSN,,STL,L,5,7,,7-8,3,5,Siegrist,Treinen,Rosenthal,2:51,1,"25,771",22-Apr,vs STL,1,LÊ7-5,2,1,0,0,0,0,0,2,1,0,1,0.415,0.51,0.925,0.255
+16,2015,"Thursday, Apr 23",April,boxscore,WSN,,STL,L,1,4,,7-9,3,6,Wacha,Scherzer,Rosenthal,2:31,0,"26,990",23-Apr,vs STL,1,LÊ4-1,3,0,1,0,0,0,0,1,1,0,0,0.42,0.5,0.92,0.259
+27,2015,"Monday, May 4",May,boxscore,WSN,,MIA,W,6,4,,13-14,2,3.5,Grace,Morris,Roark,2:42,1,"24,731",4-May,vs MIA,1,WÊ6-4,2,0,0,0,0,0,0,2,0,0,0,0.419,0.478,0.897,0.256
+28,2015,"Tuesday, May 5",May,boxscore,WSN,,MIA,L,1,2,,13-15,4,4.5,Latos,Strasburg,Cishek,3:07,1,"25,332",5-May,vs MIA,1,LÊ2-1,4,0,0,0,0,0,0,0,2,0,0,0.405,0.457,0.862,0.245
+29,2015,"Wednesday, May 6",May,boxscore,WSN,,MIA,W,7,5,,14-15,3,4.5,Scherzer,Koehler,Storen,2:40,0,"31,417",6-May,vs MIA,1,WÊ7-5,4,3,3,0,0,3,5,0,0,0,0,0.416,0.561,0.977,0.265
+30,2015,"Friday, May 8",May,boxscore,WSN,,ATL,W,9,2,,15-15,2,3.5,Gonzalez,Stults,,2:21,1,"31,288",8-May,vs ATL,1,WÊ9-2,4,2,3,0,0,2,5,0,1,0,0,0.426,0.627,1.053,0.284
+31,2015,"Saturday, May 9",May,boxscore,WSN,,ATL,W-wo,8,6,,16-15,2,3.5,Storen,Martin,,3:12,0,"39,193",9-May,vs ATL,1,WÊ8-6,4,2,2,0,0,1,2,1,1,0,0,0.433,0.651,1.084,0.292
+32,2015,"Sunday, May 10",May,boxscore,WSN,,ATL,W,5,4,,17-15,2,3.5,Solis,Martin,Storen,2:51,0,"31,938",10-May,vs ATL,1,WÊ5-4,4,1,2,1,0,0,1,0,0,0,0,0.435,0.655,1.09,0.3
+40,2015,"Tuesday, May 19",May,boxscore,WSN,,NYY,W-wo,8,6,10,23-17,1,Tied,Grace,Miller,,3:20,1,"37,355",19-May,vs NYY,1,WÊ8-6,4,1,1,0,0,1,1,1,2,0,0,0.474,0.737,1.211,0.336
+41,2015,"Wednesday, May 20",May,boxscore,WSN,,NYY,W,3,2,,24-17,1,up 1.0,Zimmermann,Warren,Storen,2:43,1,"37,648",20-May,vs NYY,1,WÊ3-2,1,0,0,0,0,0,0,0,0,0,0,0.472,0.732,1.204,0.333
+42,2015,"Friday, May 22",May,boxscore,WSN,,PHI,W,2,1,,25-17,1,up 1.5,Scherzer,O'Sullivan,Storen,2:35,1,"35,893",22-May,vs PHI,1,WÊ2-1,2,1,1,0,0,1,1,1,0,0,0,0.475,0.75,1.225,0.336
+43,2015,"Saturday, May 23",May,boxscore,WSN,,PHI,L,1,8,,25-18,1,up 1.5,Hamels,Strasburg,,2:33,0,"41,722",23-May,vs PHI,1,LÊ8-1,4,0,0,0,0,0,0,0,2,0,0,0.464,0.729,1.193,0.326
+44,2015,"Sunday, May 24",May,boxscore,WSN,,PHI,W,4,1,,26-18,1,up 2.5,Gonzalez,Harang,Storen,2:45,0,"41,044",24-May,vs PHI,1,WÊ4-1,3,1,2,0,0,0,2,1,0,0,0,0.471,0.728,1.199,0.333
+51,2015,"Tuesday, Jun 2 (1)",June,boxscore,WSN,,TOR,W,2,0,,29-22,1,up 0.5,Zimmermann,Dickey,Storen,2:17,0,"23,192",2-Jun,vs TOR,1,WÊ2-0,3,0,1,0,0,0,1,1,1,1,0,0.469,0.717,1.186,0.325
+52,2015,"Tuesday, Jun 2 (2)",June,boxscore,WSN,,TOR,L,3,7,,29-23,1,up 0.5,Estrada,Scherzer,,3:04,1,"25,765",2-Jun,vs TOR,1,LÊ7-3,4,1,2,1,0,0,0,0,0,0,0,0.47,0.718,1.188,0.329
+53,2015,"Wednesday, Jun 3",June,boxscore,WSN,,TOR,L,0,8,,29-24,1,up 0.5,Buehrle,Jordan,,2:13,1,"33,654",3-Jun,vs TOR,1,LÊ8-0,4,0,2,1,0,0,0,0,0,0,0,0.471,0.718,1.189,0.333
+54,2015,"Thursday, Jun 4",June,boxscore,WSN,,CHC,L,1,2,,29-25,2,0.5,Arrieta,Gonzalez,Rondon,3:16,1,"35,465",4-Jun,vs CHC,1,LÊ2-1,3,0,0,0,0,0,1,1,0,0,0,0.467,0.706,1.173,0.328
+55,2015,"Friday, Jun 5",June,boxscore,WSN,,CHC,W,7,5,,30-25,1,up 0.5,Roark,Wada,Storen,2:58,1,"36,124",5-Jun,vs CHC,1,WÊ7-5,2,0,1,1,0,0,0,2,1,0,0,0.472,0.709,1.181,0.33
+56,2015,"Saturday, Jun 6",June,boxscore,WSN,,CHC,L,2,4,,30-26,1,up 0.5,Hammel,Ross,Strop,2:52,0,"38,214",6-Jun,vs CHC,1,LÊ4-2,4,1,2,0,0,1,1,0,0,0,0,0.472,0.721,1.193,0.333
+57,2015,"Sunday, Jun 7",June,boxscore,WSN,,CHC,L,3,6,,30-27,2,0.5,Hendricks,Zimmermann,Motte,3:12,0,"40,939",7-Jun,vs CHC,1,LÊ6-3,4,0,0,0,0,0,0,0,0,0,0,0.464,0.706,1.17,0.326
+66,2015,"Wednesday, Jun 17",June,boxscore,WSN,,TBR,L,0,5,,34-32,2,1.5,Andriese,Zimmermann,,2:35,1,"28,929",17-Jun,vs TB,1,LÊ5-0,4,0,1,0,0,0,0,0,1,0,0,0.478,0.726,1.204,0.344
+67,2015,"Thursday, Jun 18",June,boxscore,WSN,,TBR,L,3,5,,34-33,2,1.5,Archer,Fister,Boxberger,3:02,1,"29,242",18-Jun,vs TB,1,LÊ5-3,3,0,1,0,0,0,1,0,1,0,0,0.476,0.72,1.196,0.344
+68,2015,"Friday, Jun 19",June,boxscore,WSN,,PIT,W,4,1,,35-33,2,0.5,Ross,Burnett,Storen,2:36,1,"38,935",19-Jun,vs PIT,0,WÊ4-1,Did not play,,,,,,,,,,,,,,
+69,2015,"Saturday, Jun 20",June,boxscore,WSN,,PIT,W,6,0,,36-33,1,up 0.5,Scherzer,Liriano,,2:21,0,"41,104",20-Jun,vs PIT,1,WÊ6-0,4,2,2,0,0,1,2,0,0,0,0,0.477,0.73,1.207,0.347
+70,2015,"Sunday, Jun 21",June,boxscore,WSN,,PIT,W,9,2,,37-33,1,up 1.5,Gonzalez,Morton,,2:34,0,"40,015",21-Jun,vs PIT,1,WÊ9-2,4,1,1,0,0,1,2,0,2,0,0,0.473,0.735,1.208,0.345
+71,2015,"Tuesday, Jun 23",June,boxscore,WSN,,ATL,W,3,1,,38-33,1,up 2.5,Strasburg,Wood,Storen,2:52,1,"28,344",23-Jun,vs ATL,1,WÊ3-1,4,0,0,0,0,0,0,0,0,0,0,0.467,0.722,1.189,0.339
+72,2015,"Wednesday, Jun 24",June,boxscore,WSN,,ATL,W-wo,2,1,11,39-33,1,up 3.5,Rivero,Eveland,,3:10,1,"36,141",24-Jun,vs ATL,1,WÊ2-1,5,1,2,1,0,0,1,0,1,0,0,0.466,0.719,1.185,0.34
+73,2015,"Thursday, Jun 25",June,boxscore,WSN,,ATL,W,7,0,,40-33,1,up 3.5,Fister,Wisler,,2:36,0,"37,874",25-Jun,vs ATL,0,WÊ7-0,Did not play,,,,,,,,,,,,,,
+80,2015,"Friday, Jul 3",July,boxscore,WSN,,SFG,W,2,1,,44-36,1,up 3.5,Gonzalez,Peavy,Storen,2:33,1,"41,693",3-Jul,vs SF,1,WÊ2-1,1,1,0,0,0,0,0,3,0,0,0,0.465,0.702,1.167,0.337
+81,2015,"Saturday, Jul 4",July,boxscore,WSN,,SFG,W,9,3,,45-36,1,up 4.5,Roark,Bumgarner,,3:10,0,"40,029",4-Jul,vs SF,1,WÊ9-3,4,2,3,1,0,1,2,1,0,0,0,0.47,0.719,1.189,0.344
+82,2015,"Sunday, Jul 5",July,boxscore,WSN,,SFG,W,3,1,,46-36,1,up 4.5,Zimmermann,Kontos,Storen,3:02,1,"33,157",5-Jul,vs SF,1,WÊ3-1,3,1,2,1,0,0,0,1,0,1,0,0.474,0.722,1.196,0.347
+83,2015,"Monday, Jul 6",July,boxscore,WSN,,CIN,L,2,3,,46-37,1,up 3.5,Parra,Janssen,Chapman,2:43,1,"23,673",6-Jul,vs CIN,1,LÊ3-2,3,0,0,0,0,0,0,1,1,0,0,0.471,0.714,1.185,0.344
+84,2015,"Tuesday, Jul 7",July,boxscore,WSN,,CIN,L,0,5,,46-38,1,up 3.5,Cueto,Scherzer,,2:30,1,"31,898",7-Jul,vs CIN,1,LÊ5-0,3,0,1,0,0,0,0,1,1,0,0,0.471,0.709,1.18,0.343
+88,2015,"Friday, Jul 17",July,boxscore,WSN,,LAD,W,5,3,,49-39,1,up 3.0,Janssen,Baez,Storen,2:51,1,"40,709",17-Jul,vs LAD,1,WÊ5-3,1,0,0,0,0,0,1,3,0,0,0,0.467,0.701,1.168,0.338
+89,2015,"Saturday, Jul 18",July,boxscore,WSN,,LAD,L,2,4,,49-40,1,up 3.0,Kershaw,Fister,,2:43,0,"41,426",18-Jul,vs LAD,1,LÊ4-2,4,1,1,0,0,1,2,0,3,0,0,0.464,0.706,1.17,0.337
+90,2015,"Sunday, Jul 19",July,boxscore,WSN,,LAD,L,0,5,,49-41,1,up 2.0,Greinke,Scherzer,,3:14,0,"40,293",19-Jul,vs LAD,1,LÊ5-0,3,0,1,0,0,0,0,1,2,0,0,0.465,0.702,1.167,0.337
+91,2015,"Monday, Jul 20",July,boxscore,WSN,,NYM,W,7,2,,50-41,1,up 3.0,Gonzalez,Harvey,,2:50,1,"31,326",20-Jul,vs NYM,1,WÊ7-2,2,2,0,0,0,0,0,2,1,0,0,0.465,0.697,1.162,0.334
+92,2015,"Tuesday, Jul 21",July,boxscore,WSN,,NYM,L,2,7,,50-42,1,up 2.0,deGrom,Ross,,2:54,1,"37,721",21-Jul,vs NYM,1,LÊ7-2,3,0,0,0,0,0,0,0,0,0,0,0.463,0.69,1.153,0.331
+93,2015,"Wednesday, Jul 22",July,boxscore,WSN,,NYM,W,4,3,,51-42,1,up 3.0,Thornton,Parnell,Storen,3:02,0,"41,291",22-Jul,vs NYM,1,WÊ4-3,4,0,2,0,0,0,0,1,0,0,0,0.465,0.687,1.152,0.333
+104,2015,"Monday, Aug 3",August,boxscore,WSN,,ARI,L,4,6,,54-50,2,1,Godley,Fister,Ziegler,2:42,1,"30,888",3-Aug,vs ARI,1,LÊ6-4,4,0,1,0,0,0,0,0,0,0,0,0.454,0.667,1.121,0.33
+105,2015,"Tuesday, Aug 4",August,boxscore,WSN,,ARI,W,5,4,,55-50,2,1,Storen,Hernandez,Papelbon,3:13,1,"26,112",4-Aug,vs ARI,1,WÊ5-4,3,1,1,1,0,0,0,1,0,0,0,0.455,0.667,1.122,0.33
+106,2015,"Wednesday, Aug 5",August,boxscore,WSN,,ARI,L,4,11,,55-51,2,2,DeÊLaÊRosa,Barrett,,3:56,1,"37,572",5-Aug,vs ARI,1,LÊ11-4,3,0,1,0,0,0,0,1,1,0,0,0.455,0.664,1.119,0.33
+107,2015,"Thursday, Aug 6",August,boxscore,WSN,,ARI,W,8,3,,56-51,2,1.5,Ross,Hellickson,,3:32,0,"32,838",6-Aug,vs ARI,1,WÊ8-3,2,2,2,0,0,0,0,3,0,0,0,0.461,0.666,1.127,0.334
+108,2015,"Friday, Aug 7",August,boxscore,WSN,,COL,L,4,5,,56-52,2,2.5,Oberg,Storen,Kahnle,3:17,1,"33,622",7-Aug,vs COL,1,LÊ5-4,3,2,1,0,0,0,1,2,1,0,0,0.463,0.663,1.126,0.334
+109,2015,"Saturday, Aug 8",August,boxscore,WSN,,COL,W,6,1,,57-52,2,1.5,Strasburg,Butler,,2:38,1,"37,115",8-Aug,vs COL,1,WÊ6-1,3,2,2,0,0,0,0,1,0,0,0,0.466,0.663,1.129,0.337
+110,2015,"Sunday, Aug 9",August,boxscore,WSN,,COL,L,4,6,,57-53,2,1.5,Axford,Storen,Kahnle,3:24,0,"33,157",9-Aug,vs COL,1,LÊ6-4,5,0,1,0,0,0,0,0,1,0,0,0.463,0.656,1.119,0.335
+121,2015,"Friday, Aug 21",August,boxscore,WSN,,MIL,L,3,10,,60-61,2,5,Nelson,Gonzalez,Lohse,3:24,1,"29,916",21-Aug,vs MIL,1,LÊ10-3,3,1,1,0,0,1,1,1,1,0,0,0.457,0.642,1.099,0.33
+122,2015,"Saturday, Aug 22",August,boxscore,WSN,,MIL,W,6,1,,61-61,2,5,Ross,Jungmann,,2:44,1,"33,171",22-Aug,vs MIL,1,WÊ6-1,4,0,1,0,0,0,0,0,1,0,0,0.455,0.638,1.093,0.329
+123,2015,"Sunday, Aug 23",August,boxscore,WSN,,MIL,W,9,5,,62-61,2,5,Zimmermann,Garza,,3:03,0,"28,039",23-Aug,vs MIL,1,WÊ9-5,5,1,2,2,0,0,0,0,2,0,0,0.455,0.64,1.095,0.33
+124,2015,"Tuesday, Aug 25",August,boxscore,WSN,,SDP,W,8,3,,63-61,2,5.5,Strasburg,Shields,,3:08,1,"34,199",25-Aug,vs SD,1,WÊ8-3,4,2,1,1,0,0,0,1,0,0,0,0.454,0.639,1.093,0.329
+125,2015,"Wednesday, Aug 26",August,boxscore,WSN,,SDP,L,5,6,,63-62,2,6.5,Ross,Gonzalez,Kimbrel,3:07,1,"29,332",26-Aug,vs SD,1,LÊ6-5,3,1,2,0,0,0,2,1,1,1,0,0.456,0.639,1.095,0.332
+126,2015,"Thursday, Aug 27",August,boxscore,WSN,,SDP,W,4,2,,64-62,2,6.5,Ross,Cashner,Papelbon,3:01,1,"28,908",27-Aug,vs SD,1,WÊ4-2,3,0,2,0,0,0,0,1,0,0,0,0.46,0.639,1.099,0.334
+127,2015,"Friday, Aug 28",August,boxscore,WSN,,MIA,L,3,4,,64-63,2,6.5,Conley,Scherzer,Ramos,2:49,1,"30,892",28-Aug,vs MIA,1,LÊ4-3,3,0,1,0,0,0,0,1,0,0,0,0.46,0.637,1.097,0.334
+128,2015,"Saturday, Aug 29",August,boxscore,WSN,,MIA,W,5,1,,65-63,2,5.5,Zimmermann,Koehler,,2:25,1,"31,519",29-Aug,vs MIA,1,WÊ5-1,3,0,0,0,0,0,0,1,2,0,0,0.458,0.632,1.09,0.332
+129,2015,"Sunday, Aug 30",August,boxscore,WSN,,MIA,W,7,4,,66-63,2,5.5,Fister,Hand,Papelbon,3:05,0,"34,488",30-Aug,vs MIA,1,WÊ7-4,4,1,1,0,0,0,1,0,2,0,0,0.457,0.629,1.086,0.331
+133,2015,"Thursday, Sep 3",September,boxscore,WSN,,ATL,W,15,1,,68-65,2,6,Zimmermann,Wisler,,3:02,1,"28,627",3-Sep,vs ATL,1,WÊ15-1,0,4,0,0,0,0,1,4,0,0,0,0.464,0.627,1.091,0.331
+134,2015,"Friday, Sep 4",September,boxscore,WSN,,ATL,W-wo,5,2,10,69-65,2,5,Papelbon,Marksberry,,3:23,1,"23,536",4-Sep,vs ATL,1,WÊ5-2,3,2,2,0,0,1,1,2,0,0,0,0.467,0.634,1.101,0.333
+135,2015,"Saturday, Sep 5",September,boxscore,WSN,,ATL,W,8,2,,70-65,2,5,Gonzalez,Miller,,3:07,1,"28,646",5-Sep,vs ATL,1,WÊ8-2,4,2,3,2,0,1,2,0,1,0,0,0.469,0.647,1.116,0.337
+136,2015,"Sunday, Sep 6",September,boxscore,WSN,,ATL,W,8,4,,71-65,2,4,Rivero,Banuelos,,3:06,0,"29,281",6-Sep,vs ATL,1,WÊ8-4,4,1,2,0,0,1,1,1,0,0,0,0.47,0.652,1.122,0.339
+137,2015,"Monday, Sep 7",September,boxscore,WSN,,NYM,L,5,8,,71-66,2,5,Alvarez,Treinen,Familia,3:26,0,"34,210",7-Sep,vs NYM,1,LÊ8-5,4,0,0,0,0,0,0,1,3,0,0,0.468,0.646,1.114,0.336
+138,2015,"Tuesday, Sep 8",September,boxscore,WSN,,NYM,L,7,8,,71-67,2,6,Reed,Papelbon,Familia,3:20,1,"27,507",8-Sep,vs NYM,1,LÊ8-7,4,0,0,0,0,0,0,1,1,0,0,0.465,0.64,1.105,0.333
+139,2015,"Wednesday, Sep 9",September,boxscore,WSN,,NYM,L,3,5,,71-68,2,7,deGrom,Strasburg,Familia,2:37,1,"27,530",9-Sep,vs NYM,1,LÊ5-3,4,3,3,1,0,2,2,0,0,0,0,0.467,0.657,1.124,0.336
+146,2015,"Thursday, Sep 17",September,boxscore,WSN,,MIA,L,4,6,,75-71,2,8,Cosart,Roark,Ramos,3:13,1,"23,606",17-Sep,vs MIA,1,LÊ6-4,4,1,2,0,0,0,0,0,0,0,0,0.467,0.669,1.136,0.34
+147,2015,"Friday, Sep 18",September,boxscore,WSN,,MIA,W-wo,5,4,10,76-71,2,8,Janssen,Ellington,,3:22,1,"27,495",18-Sep,vs MIA,1,WÊ5-4,3,2,1,0,0,0,0,2,1,0,0,0.468,0.667,1.135,0.34
+148,2015,"Saturday, Sep 19",September,boxscore,WSN,,MIA,W,5,2,,77-71,2,7,Zimmermann,Hand,Papelbon,2:45,0,"32,768",19-Sep,vs MIA,1,WÊ5-2,3,1,1,0,0,1,3,0,0,0,0,0.467,0.671,1.138,0.34
+149,2015,"Sunday, Sep 20",September,boxscore,WSN,,MIA,W,13,3,,78-71,2,6,Strasburg,Nicolino,,2:57,0,"28,444",20-Sep,vs MIA,1,WÊ13-3,4,3,3,1,0,0,0,1,0,0,0,0.47,0.674,1.144,0.343
+150,2015,"Tuesday, Sep 22",September,boxscore,WSN,,BAL,L,1,4,,78-72,2,6.5,Jimenez,Gonzalez,O'Day,2:51,1,"27,338",22-Sep,vs BAL,1,LÊ4-1,1,0,0,0,0,0,0,3,0,0,0,0.471,0.672,1.143,0.342
+151,2015,"Wednesday, Sep 23",September,boxscore,WSN,,BAL,L,3,4,,78-73,2,6.5,Tillman,Scherzer,O'Day,3:03,1,"27,991",23-Sep,vs BAL,1,LÊ4-3,2,0,0,0,0,0,0,2,1,0,0,0.472,0.669,1.141,0.341
+152,2015,"Thursday, Sep 24",September,boxscore,WSN,,BAL,L,4,5,,78-74,2,7.5,Wright,Treinen,O'Day,3:05,0,"28,456",24-Sep,vs BAL,1,LÊ5-4,3,0,0,0,0,0,0,2,0,0,0,0.471,0.665,1.136,0.339
+153,2015,"Friday, Sep 25",September,boxscore,WSN,,PHI,L,2,8,,78-75,2,8.5,Eickhoff,Zimmermann,,2:30,1,"31,019",25-Sep,vs PHI,1,LÊ8-2,4,0,0,0,0,0,0,0,3,0,0,0.468,0.66,1.128,0.336
+154,2015,"Saturday, Sep 26",September,boxscore,WSN,,PHI,W-wo,2,1,12,79-75,2,8.5,Thornton,Murray,,3:50,0,"32,086",26-Sep,vs PHI,1,WÊ2-1,5,1,3,2,0,0,1,1,2,0,0,0.47,0.663,1.133,0.339
+155,2015,"Sunday, Sep 27",September,boxscore,WSN,,PHI,L,5,12,,79-76,2,9.5,Hinojosa,Papelbon,,3:02,0,"28,661",27-Sep,vs PHI,1,LÊ12-5,4,0,0,0,0,0,0,0,0,0,0,0.467,0.658,1.125,0.336
+156,2015,"Monday, Sep 28",September,boxscore,WSN,,CIN,W,5,1,,80-76,2,9,Scherzer,Finnegan,,2:37,0,"24,420",28-Sep,vs CIN,0,WÊ5-1,Did not play,,,,,,,,,,,,,,
+4,2014,"Friday, Apr 4",April,boxscore,WSN,,ATL,L,1,2,,3-1,2,0.5,Avilan,Clippard,Kimbrel,3:03,0,"42,834",4-Apr,vs ATL,1,LÊ2-1,4,0,1,0,0,0,0,0,2,0,1,0.222,0.176,0.398,0.176
+5,2014,"Saturday, Apr 5",April,boxscore,WSN,,ATL,L,2,6,,3-2,3,1.5,Teheran,Strasburg,,3:36,1,"37,841",5-Apr,vs ATL,1,LÊ6-2,4,0,0,0,0,0,0,0,2,0,0,0.182,0.143,0.325,0.143
+6,2014,"Sunday, Apr 6",April,boxscore,WSN,,ATL,W,2,1,,4-2,2,0.5,Blevins,Wood,Soriano,2:44,0,"34,327",6-Apr,vs ATL,0,WÊ2-1,Did not play,,,,,,,,,,,,,,
+7,2014,"Tuesday, Apr 8",April,boxscore,WSN,,MIA,W,5,0,,5-2,1,up 0.5,Gonzalez,Alvarez,,2:58,1,"21,728",8-Apr,vs MIA,1,WÊ5-0,4,1,1,0,0,0,0,0,1,0,0,0.192,0.16,0.352,0.16
+8,2014,"Wednesday, Apr 9",April,boxscore,WSN,,MIA,W,10,7,,6-2,1,up 1.0,Clippard,Marmol,Soriano,3:56,1,"21,190",9-Apr,vs MIA,1,WÊ10-7,4,1,2,0,0,1,3,0,2,0,0,0.233,0.31,0.543,0.207
+9,2014,"Thursday, Apr 10",April,boxscore,WSN,,MIA,W,7,1,,7-2,1,up 2.0,Strasburg,Koehler,,2:53,0,"20,869",10-Apr,vs MIA,1,WÊ7-1,3,1,1,0,0,0,1,1,0,0,0,0.265,0.313,0.578,0.219
+16,2014,"Thursday, Apr 17",April,boxscore,WSN,,STL,L,0,8,,9-7,2,1.5,Wainwright,Jordan,,3:10,1,"28,987",17-Apr,vs STL,1,LÊ8-0,4,0,0,0,0,0,0,0,0,0,0,0.373,0.463,0.836,0.315
+17,2014,"Friday, Apr 18",April,boxscore,WSN,,STL,W,3,1,,10-7,2,1.5,Gonzalez,Wacha,Soriano,2:32,1,"31,237",18-Apr,vs STL,1,WÊ3-1,4,0,1,0,0,0,0,0,1,0,0,0.365,0.448,0.813,0.31
+18,2014,"Saturday, Apr 19",April,boxscore,WSN,,STL,L,3,4,,10-8,2,2.5,Lynn,Zimmermann,Rosenthal,2:44,0,"41,084",19-Apr,vs STL,1,LÊ4-3,3,0,0,0,0,0,0,0,0,0,0,0.348,0.426,0.774,0.295
+19,2014,"Sunday, Apr 20",April,boxscore,WSN,,STL,W-wo,3,2,,11-8,2,1.5,Soriano,Maness,,3:18,0,"27,653",20-Apr,vs STL,1,WÊ3-2,4,0,1,0,0,0,0,1,1,1,0,0.352,0.415,0.767,0.292
+20,2014,"Monday, Apr 21",April,boxscore,WSN,,LAA,L,2,4,,11-9,2,2.5,Salas,Clippard,Frieri,3:18,1,"24,371",21-Apr,vs LAA,1,LÊ4-2,3,0,0,0,0,0,0,1,1,0,0,0.347,0.397,0.744,0.279
+21,2014,"Tuesday, Apr 22",April,boxscore,WSN,,LAA,L,2,7,,11-10,2,2.5,Skaggs,Jordan,,2:43,1,"21,915",22-Apr,vs LAA,1,LÊ7-2,4,0,0,0,0,0,0,0,2,0,0,0.329,0.375,0.704,0.264
+22,2014,"Wednesday, Apr 23",April,boxscore,WSN,,LAA,W-wo,5,4,,12-10,2,2.5,Storen,Frieri,,3:18,1,"22,504",23-Apr,vs LAA,1,WÊ5-4,4,0,1,0,0,0,0,0,0,0,0,0.325,0.368,0.693,0.263
+23,2014,"Thursday, Apr 24",April,boxscore,WSN,,SDP,L,3,4,12,12-11,3,3,Torres,Stammen,Street,4:14,1,"22,904",24-Apr,vs SD,1,LÊ4-3,5,0,2,1,0,0,0,1,0,0,0,0.337,0.383,0.72,0.272
+24,2014,"Friday, Apr 25",April,boxscore,WSN,,SDP,W,11,1,,13-11,3,3,Strasburg,Erlin,,3:08,1,"25,497",25-Apr,vs SD,1,WÊ11-1,2,1,2,0,1,0,4,0,0,0,0,0.352,0.422,0.774,0.289
+25,2014,"Saturday, Apr 26",April,boxscore,WSN,,SDP,W,4,0,,14-11,2,3,Roark,Cashner,,2:19,0,"31,590",26-Apr,vs SD,0,WÊ4-0,Did not play,,,,,,,,,,,,,,
+26,2014,"Sunday, Apr 27",April,boxscore,WSN,,SDP,L,2,4,,14-12,3,4,Kennedy,Detwiler,Street,3:12,0,"34,873",27-Apr,vs SD,0,LÊ4-2,Did not play,,,,,,,,,,,,,,
+32,2014,"Monday, May 5",May,boxscore,WSN,,LAD,W,4,0,,18-14,1,up 0.5,Barrett,Greinke,,2:59,1,"25,447",5-May,vs LAD,0,WÊ4-0,Did not play,,,,,,,,,,,,,,
+33,2014,"Tuesday, May 6",May,boxscore,WSN,,LAD,L,3,8,,18-15,2,0.5,Kershaw,Treinen,,3:15,1,"30,143",6-May,vs LAD,0,LÊ8-3,Did not play,,,,,,,,,,,,,,
+34,2014,"Wednesday, May 7",May,boxscore,WSN,,LAD,W,3,2,,19-15,1,Tied,Strasburg,Haren,Soriano,2:59,0,"34,756",7-May,vs LAD,0,WÊ3-2,Did not play,,,,,,,,,,,,,,
+41,2014,"Friday, May 16",May,boxscore,WSN,,NYM,W,5,2,,22-19,2,0.5,Roark,Niese,Soriano,3:08,1,"34,413",16-May,vs NYM,0,WÊ5-2,Did not play,,,,,,,,,,,,,,
+42,2014,"Saturday, May 17",May,boxscore,WSN,,NYM,L,2,5,,22-20,2,0.5,Colon,Gonzalez,Mejia,2:48,0,"41,225",17-May,vs NYM,0,LÊ5-2,Did not play,,,,,,,,,,,,,,
+43,2014,"Sunday, May 18",May,boxscore,WSN,,NYM,W,6,3,,23-20,2,0.5,Zimmermann,Wheeler,Soriano,2:45,0,"36,965",18-May,vs NYM,0,WÊ6-3,Did not play,,,,,,,,,,,,,,
+44,2014,"Monday, May 19",May,boxscore,WSN,,CIN,L,3,4,15,23-21,2,1.5,Ondrusek,Detwiler,,4:58,1,"24,505",19-May,vs CIN,0,LÊ4-3,Did not play,,,,,,,,,,,,,,
+45,2014,"Tuesday, May 20",May,boxscore,WSN,,CIN,W,9,4,,24-21,2,1.5,Fister,Cueto,,3:03,1,"26,455",20-May,vs CIN,0,WÊ9-4,Did not play,,,,,,,,,,,,,,
+46,2014,"Wednesday, May 21",May,boxscore,WSN,,CIN,L,1,2,,24-22,2,1.5,Simon,Roark,Chapman,2:52,0,"28,944",21-May,vs CIN,0,LÊ2-1,Did not play,,,,,,,,,,,,,,
+51,2014,"Monday, May 26",May,boxscore,WSN,,MIA,L,2,3,,25-26,3,3.5,Eovaldi,Roark,Cishek,2:46,0,"33,677",26-May,vs MIA,0,LÊ3-2,Did not play,,,,,,,,,,,,,,
+52,2014,"Wednesday, May 28",May,boxscore,WSN,,MIA,L,5,8,10,25-27,3,3,Slowey,Blevins,,3:47,1,"24,830",28-May,vs MIA,0,LÊ8-5,Did not play,,,,,,,,,,,,,,
+53,2014,"Friday, May 30",May,boxscore,WSN,,TEX,W,9,2,,26-27,3,2.5,Strasburg,Lewis,,2:45,1,"31,659",30-May,vs TEX,0,WÊ9-2,Did not play,,,,,,,,,,,,,,
+54,2014,"Saturday, May 31",May,boxscore,WSN,,TEX,W,10,2,,27-27,3,2.5,Fister,Tepesch,,2:47,0,"35,164",31-May,vs TEX,0,WÊ10-2,Did not play,,,,,,,,,,,,,,
+55,2014,"Sunday, Jun 1",June,boxscore,WSN,,TEX,L,0,2,,27-28,3,3.5,Darvish,Roark,Soria,3:06,0,"32,813",1-Jun,vs TEX,0,LÊ2-0,Did not play,,,,,,,,,,,,,,
+56,2014,"Tuesday, Jun 3",June,boxscore,WSN,,PHI,W,7,0,,28-28,3,2.5,Zimmermann,Buchanan,,2:42,1,"25,291",3-Jun,vs PHI,0,WÊ7-0,Did not play,,,,,,,,,,,,,,
+57,2014,"Wednesday, Jun 4",June,boxscore,WSN,,PHI,W,8,4,,29-28,3,1.5,Strasburg,Burnett,,3:00,1,"33,614",4-Jun,vs PHI,0,WÊ8-4,Did not play,,,,,,,,,,,,,,
+58,2014,"Thursday, Jun 5",June,boxscore,WSN,,PHI,W,4,2,,30-28,3,1,Fister,Kendrick,Soriano,2:38,0,"33,016",5-Jun,vs PHI,0,WÊ4-2,Did not play,,,,,,,,,,,,,,
+69,2014,"Tuesday, Jun 17",June,boxscore,WSN,,HOU,W,6,5,,36-33,1,up 0.5,Roark,Keuchel,Soriano,3:41,1,"29,960",17-Jun,vs HOU,0,WÊ6-5,Did not play,,,,,,,,,,,,,,
+70,2014,"Wednesday, Jun 18",June,boxscore,WSN,,HOU,W,6,5,,37-33,1,up 1.5,Barrett,Downs,Soriano,3:42,1,"25,453",18-Jun,vs HOU,0,WÊ6-5,Did not play,,,,,,,,,,,,,,
+71,2014,"Thursday, Jun 19",June,boxscore,WSN,,ATL,L,0,3,,37-34,1,up 0.5,Floyd,Zimmermann,Kimbrel,2:56,1,"32,193",19-Jun,vs ATL,0,LÊ3-0,Did not play,,,,,,,,,,,,,,
+72,2014,"Friday, Jun 20",June,boxscore,WSN,,ATL,L,4,6,13,37-35,2,0.5,Buchter,Blevins,Walden,4:34,1,"36,608",20-Jun,vs ATL,0,LÊ6-4,Did not play,,,,,,,,,,,,,,
+73,2014,"Saturday, Jun 21",June,boxscore,WSN,,ATL,W,3,0,,38-35,1,up 0.5,Fister,Teheran,Soriano,2:44,1,"40,677",21-Jun,vs ATL,0,WÊ3-0,Did not play,,,,,,,,,,,,,,
+74,2014,"Sunday, Jun 22",June,boxscore,WSN,,ATL,W,4,1,,39-35,1,up 1.5,Roark,Santana,Soriano,2:54,0,"39,473",22-Jun,vs ATL,0,WÊ4-1,Did not play,,,,,,,,,,,,,,
+82,2014,"Monday, Jun 30",June,boxscore,WSN,,COL,W,7,3,,44-38,2,0.5,Zimmermann,Flande,,2:58,1,"33,660",30-Jun,vs COL,1,WÊ7-3,3,1,1,0,0,0,1,1,0,0,0,0.358,0.419,0.777,0.291
+83,2014,"Tuesday, Jul 1",July,boxscore,WSN,,COL,W,7,1,,45-38,2,0.5,Strasburg,Friedrich,,3:19,1,"26,033",1-Jul,vs COL,1,WÊ7-1,5,0,1,0,0,0,0,0,3,0,0,0.35,0.407,0.757,0.286
+84,2014,"Wednesday, Jul 2",July,boxscore,WSN,,COL,W,4,3,,46-38,2,0.5,Fister,Belisle,Soriano,2:42,1,"28,943",2-Jul,vs COL,1,WÊ4-3,3,1,1,1,0,0,0,0,1,0,0,0.35,0.415,0.765,0.287
+85,2014,"Friday, Jul 4",July,boxscore,WSN,,CHC,L,2,7,,46-39,2,1.5,Hammel,Roark,,2:54,0,"41,274",4-Jul,vs CHC,1,LÊ7-2,4,0,0,0,0,0,0,0,2,0,0,0.336,0.398,0.734,0.276
+86,2014,"Saturday, Jul 5",July,boxscore,WSN,,CHC,W,13,0,,47-39,2,1.5,Gonzalez,Villanueva,,3:10,0,"38,473",5-Jul,vs CHC,1,WÊ13-0,3,0,1,0,0,0,0,1,1,0,0,0.342,0.396,0.738,0.277
+87,2014,"Sunday, Jul 6",July,boxscore,WSN,,CHC,W,2,1,,48-39,2,0.5,Clippard,Strop,Soriano,3:12,0,"32,941",6-Jul,vs CHC,1,WÊ2-1,3,0,0,0,0,0,0,0,2,0,0,0.333,0.385,0.718,0.269
+88,2014,"Monday, Jul 7",July,boxscore,WSN,,BAL,L,2,8,11,48-40,2,0.5,McFarland,Stammen,,3:39,1,"35,126",7-Jul,vs BAL,1,LÊ8-2,3,0,0,0,0,0,0,2,1,0,0,0.336,0.374,0.71,0.262
+94,2014,"Friday, Jul 18",July,boxscore,WSN,,MIL,L,2,4,,51-43,2,1,Lohse,Strasburg,Rodriguez,3:00,1,"39,373",18-Jul,vs MIL,1,LÊ4-2,4,1,3,0,0,1,1,0,0,0,0,0.329,0.402,0.731,0.26
+95,2014,"Saturday, Jul 19",July,boxscore,WSN,,MIL,W,8,3,,52-43,1,Tied,Roark,Garza,,3:17,1,"38,649",19-Jul,vs MIL,1,WÊ8-3,3,2,1,1,0,0,0,1,1,0,0,0.333,0.408,0.741,0.262
+96,2014,"Sunday, Jul 20",July,boxscore,WSN,,MIL,W-wo,5,4,,53-43,1,Tied,Soriano,Wooten,,3:35,0,"36,373",20-Jul,vs MIL,1,WÊ5-4,3,0,1,0,0,0,0,1,2,0,0,0.338,0.406,0.744,0.263
+106,2014,"Thursday, Jul 31",July,boxscore,WSN,,PHI,L,4,10,,58-48,1,up 1.5,Bastardo,Gonzalez,,3:31,1,"35,722",31-Jul,vs PHI,1,LÊ10-4,4,1,1,0,0,0,0,0,1,0,0,0.344,0.382,0.726,0.261
+107,2014,"Friday, Aug 1",August,boxscore,WSN,,PHI,L,1,2,,58-49,1,up 1.5,Hernandez,Fister,Papelbon,2:28,1,"28,410",1-Aug,vs PHI,1,LÊ2-1,4,0,1,0,0,0,0,0,2,0,0,0.342,0.379,0.721,0.26
+108,2014,"Saturday, Aug 2",August,boxscore,WSN,,PHI,W,11,0,,59-49,1,up 2.5,Zimmermann,Burnett,,3:19,1,"36,155",2-Aug,vs PHI,1,WÊ11-0,4,1,1,0,0,0,1,1,2,0,0,0.344,0.376,0.72,0.26
+109,2014,"Sunday, Aug 3",August,boxscore,WSN,,PHI,W,4,0,,60-49,1,up 3.5,Strasburg,Hamels,,2:47,0,"30,038",3-Aug,vs PHI,1,WÊ4-0,1,0,0,0,0,0,0,0,1,0,0,0.342,0.374,0.716,0.259
+110,2014,"Monday, Aug 4",August,boxscore,WSN,,BAL,L,3,7,,60-50,1,up 3.0,Gausman,Roark,,3:10,1,"42,181",4-Aug,vs BAL,1,LÊ7-3,3,1,0,0,0,0,0,1,0,0,0,0.34,0.367,0.707,0.254
+111,2014,"Tuesday, Aug 5",August,boxscore,WSN,,NYM,L,1,6,,60-51,1,up 3.0,Wheeler,Gonzalez,,3:12,1,"40,686",5-Aug,vs NYM,1,LÊ6-1,4,0,0,0,0,0,0,0,3,0,0,0.333,0.359,0.692,0.249
+112,2014,"Wednesday, Aug 6",August,boxscore,WSN,,NYM,W,7,1,,61-51,1,up 4.0,Fister,Niese,,2:31,1,"26,701",6-Aug,vs NYM,1,WÊ7-1,3,1,1,0,0,0,0,1,1,0,0,0.337,0.359,0.696,0.25
+113,2014,"Thursday, Aug 7",August,boxscore,WSN,,NYM,W-wo,5,3,13,62-51,1,up 4.5,Stammen,Torres,,4:34,0,"38,611",7-Aug,vs NYM,1,WÊ5-3,6,1,2,0,0,1,2,0,2,0,0,0.336,0.374,0.71,0.253
+120,2014,"Friday, Aug 15",August,boxscore,WSN,,PIT,W,5,4,,67-53,1,up 6.0,Roark,Morton,Soriano,3:05,1,"36,945",15-Aug,vs PIT,1,WÊ5-4,4,0,2,0,0,0,2,0,1,0,0,0.337,0.394,0.731,0.259
+121,2014,"Saturday, Aug 16",August,boxscore,WSN,,PIT,W-wo,4,3,,68-53,1,up 6.0,Thornton,Wilson,,2:49,1,"41,880",16-Aug,vs PIT,1,WÊ4-3,2,1,0,0,0,0,0,1,0,0,0,0.34,0.39,0.73,0.257
+122,2014,"Sunday, Aug 17",August,boxscore,WSN,,PIT,W-wo,6,5,11,69-53,1,up 6.0,Detwiler,Cumpton,,3:42,1,"34,430",17-Aug,vs PIT,1,WÊ6-5,4,0,0,0,0,0,0,1,1,0,0,0.337,0.383,0.72,0.252
+123,2014,"Monday, Aug 18",August,boxscore,WSN,,ARI,W-wo,5,4,11,70-53,1,up 6.0,Stammen,Harris,,3:16,1,"21,292",18-Aug,vs ARI,1,WÊ5-4,4,0,1,0,0,0,0,0,2,0,0,0.336,0.381,0.717,0.252
+124,2014,"Tuesday, Aug 19",August,boxscore,WSN,,ARI,W,8,1,,71-53,1,up 6.0,Strasburg,Anderson,,2:50,1,"26,827",19-Aug,vs ARI,1,WÊ8-1,3,1,1,0,0,0,0,1,1,0,0,0.338,0.38,0.718,0.253
+125,2014,"Wednesday, Aug 20",August,boxscore,WSN,,ARI,W-wo,3,2,,72-53,1,up 7.0,Soriano,Marshall,,3:04,1,"24,113",20-Aug,vs ARI,1,WÊ3-2,4,1,3,0,0,0,0,0,0,0,0,0.345,0.386,0.731,0.262
+126,2014,"Thursday, Aug 21",August,boxscore,WSN,,ARI,W-wo,1,0,,73-53,1,up 7.0,Soriano,Perez,,2:51,0,"32,311",21-Aug,vs ARI,1,WÊ1-0,4,0,2,0,0,0,0,0,1,0,0,0.347,0.388,0.735,0.266
+127,2014,"Friday, Aug 22",August,boxscore,WSN,,SFG,L,3,10,,73-54,1,up 6.0,Hudson,Fister,,3:24,1,"33,718",22-Aug,vs SF,1,LÊ10-3,3,0,1,0,0,0,0,0,1,0,0,0.347,0.388,0.735,0.267
+128,2014,"Saturday, Aug 23",August,boxscore,WSN,,SFG,W,6,2,,74-54,1,up 7.0,Zimmermann,Lincecum,,2:38,1,"34,137",23-Aug,vs SF,1,WÊ6-2,4,0,0,0,0,0,0,0,1,0,0,0.342,0.381,0.723,0.262
+129,2014,"Sunday, Aug 24",August,boxscore,WSN,,SFG,W,14,6,,75-54,1,up 8.0,Stammen,Affeldt,,3:46,0,"35,476",24-Aug,vs SF,1,WÊ14-6,5,2,2,1,0,1,2,0,0,0,0,0.343,0.398,0.741,0.265
+139,2014,"Friday, Sep 5",September,boxscore,WSN,,PHI,L,8,9,11,79-60,1,up 7.0,Diekman,Stammen,Papelbon,4:32,1,"27,437",5-Sep,vs PHI,1,LÊ9-8,5,0,1,0,0,0,0,0,2,0,0,0.343,0.427,0.77,0.271
+140,2014,"Saturday, Sep 6",September,boxscore,WSN,,PHI,L,1,3,,79-61,1,up 6.0,Burnett,Roark,Papelbon,2:33,0,"37,408",6-Sep,vs PHI,1,LÊ3-1,4,0,1,0,0,0,0,0,2,0,0,0.342,0.425,0.767,0.271
+141,2014,"Sunday, Sep 7",September,boxscore,WSN,,PHI,W,3,2,,80-61,1,up 7.0,Gonzalez,Hamels,Storen,3:20,0,"29,108",7-Sep,vs PHI,1,WÊ3-2,0,0,0,0,0,0,0,1,0,0,0,0.344,0.425,0.769,0.271
+142,2014,"Monday, Sep 8",September,boxscore,WSN,,ATL,W,2,1,,81-61,1,up 8.0,Fister,Minor,Storen,2:39,1,"25,448",8-Sep,vs ATL,1,WÊ2-1,4,0,0,0,0,0,0,0,0,0,0,0.339,0.419,0.758,0.267
+143,2014,"Tuesday, Sep 9",September,boxscore,WSN,,ATL,W,6,4,,82-61,1,up 9.0,Zimmermann,Santana,Storen,3:02,1,"29,233",9-Sep,vs ATL,1,WÊ6-4,4,0,1,0,0,0,0,0,0,0,0,0.338,0.417,0.755,0.267
+144,2014,"Wednesday, Sep 10",September,boxscore,WSN,,ATL,L,2,6,,82-62,1,up 8.0,Harang,Strasburg,,3:01,0,"31,086",10-Sep,vs ATL,1,LÊ6-2,4,1,1,0,0,1,1,0,0,0,0,0.337,0.424,0.761,0.266
+156,2014,"Tuesday, Sep 23",September,boxscore,WSN,,NYM,W,4,2,,92-64,1,up16.5,Roark,Colon,Storen,2:57,1,"30,714",23-Sep,vs NYM,1,WÊ4-2,4,0,0,0,0,0,0,0,1,0,0,0.334,0.419,0.753,0.267
+157,2014,"Thursday, Sep 25 (1)",September,boxscore,WSN,,NYM,L,4,7,,92-65,1,up16.5,Torres,Clippard,Mejia,3:31,0,"28,629",25-Sep,vs NYM,1,LÊ7-4,4,0,1,0,0,0,0,1,0,0,0,0.335,0.417,0.752,0.267
+158,2014,"Thursday, Sep 25 (2)",September,boxscore,WSN,,NYM,W,3,0,,93-65,1,up16.5,Gonzalez,Wheeler,Storen,3:00,1,"26,439",25-Sep,vs NYM,0,WÊ3-0,Did not play,,,,,,,,,,,,,,
+159,2014,"Friday, Sep 26 (1)",September,boxscore,WSN,,MIA,W,4,0,,94-65,1,up17.0,Fister,Cosart,,2:31,0,"27,920",26-Sep,vs MIA,1,WÊ4-0,2,0,1,0,0,0,0,2,0,1,0,0.339,0.418,0.757,0.268
+160,2014,"Friday, Sep 26 (2)",September,boxscore,WSN,,MIA,L,7,15,,94-66,1,up17.0,Ramos,Hill,,3:34,1,"34,190",26-Sep,vs MIA,0,LÊ15-7,Did not play,,,,,,,,,,,,,,
+161,2014,"Saturday, Sep 27",September,boxscore,WSN,,MIA,W,5,1,,95-66,1,up17.0,Strasburg,Eovaldi,,2:57,0,"37,529",27-Sep,vs MIA,1,WÊ5-1,3,2,1,0,0,0,0,1,1,0,0,0.341,0.417,0.758,0.269
+162,2014,"Sunday, Sep 28",September,boxscore,WSN,,MIA,W,1,0,,96-66,1,up17.0,Zimmermann,Alvarez,,2:01,0,"35,085",28-Sep,vs MIA,1,WÊ1-0,2,0,2,1,0,0,0,0,0,0,0,0.344,0.423,0.767,0.273
