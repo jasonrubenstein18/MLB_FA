@@ -23,8 +23,8 @@ for y in years:
 for url in urls:
     series_url = pd.Series(url)
     df_url = series_url.str.split('=', expand=True)
-    df_url.columns = ['protocol', 'blank', 'path_one', 'path_two', 'path_three', 'path_four', 'path_five', 'path_six',
-                      'year', 'path_eight', 'path_nine', 'league', 'd', 'desc', 'file_name', 'a', 'b', 'c']
+    df_url.columns = ['protocol', 'blank', 'path_one', 'path_two', 'path_three', 'stats', 'month', 'season',
+                      'year', 'team', 'rost', 'age', 'filter', 'players', 'start', 'end', 'page', 'a']
     df_url["year"] = df_url["year"].apply(lambda x: x.replace("&ind", ""))
     # then make that the year reference cell
     driver = webdriver.Chrome('/Users/jasonrubenstein/.wdm/chromedriver/85.0.4183.87/mac64/chromedriver')
