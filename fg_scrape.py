@@ -6,7 +6,7 @@ import numpy as np
 import time
 
 
-# Scrape Fangraphs for MLB Data (incl. but not limited to WAR, OPS, etc.)
+# Scrape Fangraphs for MLB Data (incl. but not limited to WAR, OPS, HR, etc.)
 years = [2016, 2017, 2018, 2019, 2020]
 
 appended_data = pd.DataFrame()
@@ -27,8 +27,6 @@ for url in urls:
                       'year', 'path_eight', 'path_nine', 'league', 'd', 'desc', 'file_name', 'a', 'b', 'c']
     df_url["year"] = df_url["year"].apply(lambda x: x.replace("&ind", ""))
     # then make that the year reference cell
-    df_url.columns = ['protocol', 'blank', 'path_one', 'path_two', 'path_three', 'path_four', 'path_five', 'path_six',
-                      'path_seven', 'path_eight', 'path_nine', 'league', 'year', 'desc', 'file_name', 'a', 'b', 'c']
     driver = webdriver.Chrome('/Users/jasonrubenstein/.wdm/chromedriver/85.0.4183.87/mac64/chromedriver')
     driver.implicitly_wait(5)
     driver.get(url)
@@ -42,7 +40,9 @@ for url in urls:
     df_fix = pd.DataFrame(np.reshape(df.values, (df.shape[0] // 22, 22)),
                           columns=['Num', 'Name', "Team", "PA", "BB%", "K%", "BB/K", "AVG", "OBP", "SLG", "OPS", "ISO",
                                    "Spd", "BABIP", "UBR", "wGDP", "wSB", "wRC", "wRAA", "wOBA", "wRC+", "WAR"])
-    df_fix['Year'] = df_url['year'][0]
+    df_fix['Year'] = df_url['year']
     appended_data = appended_data.append(df_fix, ignore_index=True)
     time.sleep(5)
     driver.close()
+
+appended_data['Year'] = appended_data['Year'].ffill(axis=0)
