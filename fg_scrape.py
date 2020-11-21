@@ -53,21 +53,6 @@ del fg_bat_data_full['Team'], fg_bat_data_full['Num']
 fg_bat_data_full.to_csv("~/Desktop/MLB_FA/fg_bat_data.csv")
 
 
-# Lagged metrics to see if there is carryover value / value in continuity
-fg_bat_data_full['y_n1_war'] = fg_bat_data_full.groupby("Name")['WAR'].shift(1)
-fg_bat_data_full['y_n2_war'] = fg_bat_data_full.groupby("Name")['y_n1_war'].shift(1)
-fg_bat_data_full['y_n3_war'] = fg_bat_data_full.groupby("Name")['y_n2_war'].shift(1)
-fg_bat_data_full['y_n4_war'] = fg_bat_data_full.groupby("Name")['y_n3_war'].shift(1)
-fg_bat_data_full['y_n5_war'] = fg_bat_data_full.groupby("Name")['y_n4_war'].shift(1)
-fg_bat_data_full['y_n6_war'] = fg_bat_data_full.groupby("Name")['y_n5_war'].shift(1)
-
-fg_bat_data_full['y_n1_wOBA'] = fg_bat_data_full.groupby("Name")['wOBA'].shift(1)
-fg_bat_data_full['y_n2_wOBA'] = fg_bat_data_full.groupby("Name")['y_n1_wOBA'].shift(1)
-
-fg_bat_data_full['y_n1_wOBA'] = fg_bat_data_full.groupby("Name")['wOBA'].shift(1)
-fg_bat_data_full['y_n2_wOBA'] = fg_bat_data_full.groupby("Name")['y_n1_wOBA'].shift(1)
-
-
 # Pitching Data
 fg_pitch_data = pd.DataFrame()
 
@@ -114,5 +99,3 @@ fg_pitch_data_full['Year'] = fg_pitch_data_full['Year'].astype('int') + 1
 # del fg_pitch_data_full['Team'], fg_pitch_data_full['Num']
 
 fg_pitch_data_full.to_csv("~/Desktop/MLB_FA/fg_pitch_data.csv")
-
-
