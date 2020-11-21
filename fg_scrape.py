@@ -7,7 +7,7 @@ import time
 
 
 # Scrape Fangraphs for MLB Data (incl. but not limited to WAR, OPS, HR, etc.)
-years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+years = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
 
 fg_bat_data = pd.DataFrame()
 
