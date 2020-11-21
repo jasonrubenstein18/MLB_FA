@@ -140,3 +140,5 @@ salary_data = salary_formatting(salary_data)
 
 # Remove 0 salary players
 salary_data = salary_data[(salary_data['Salary'] > 0) | (salary_data['Season'] == max(salary_data['Season']))]
+
+salary_data.to_csv("~/Desktop/MLB_FA/salary_data.csv")
