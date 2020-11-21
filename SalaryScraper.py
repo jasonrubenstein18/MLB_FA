@@ -77,8 +77,8 @@ def salary_formatting(df):
     df['Years_y'] = df['Years_y'].fillna(0)
     
     df['Years'] = np.where(df['Years_x'] >= df['Years_y'],
-                                    df['Years_x'],
-                                    df['Years_y'])
+                           df['Years_x'],
+                           df['Years_y'])
     del df['Years_x'], df['Years_y']
 
     # Remove rows where years == 0 aka player unsigned
