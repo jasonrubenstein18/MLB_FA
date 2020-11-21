@@ -1,5 +1,4 @@
 import pandas as pd
-import math
 import numpy as np
 
 # Read in data
@@ -69,6 +68,12 @@ class Metrics:
         df['y_n2_xFIP'] = df.groupby("Name")['y_n1_xFIP'].shift(1)
         return df
 
+    def fix_position(df):
+        df['Position'] = np.where(df['Position'] == "OF", "CF", df['Position'])
+        df['Position'] = np.where((df['Position'] == "LF") | (df['Position'] == "RF"),
+                                  "Corner Outfield", df['Position'])
+        return df
+
 
 class NonLinearVars():
     def fg_batter_vars(df):
@@ -108,9 +113,13 @@ class NonLinearVars():
 
         return df
 
+
 # Lag
 batter_data = Metrics.lagged_batter(batter_data)
 pitcher_data = Metrics.lagged_pitcher(pitcher_data)
+
+# Position fix
+salary_data = Metrics.fix_position(salary_data)
 
 # Non Linears
 batter_data = NonLinearVars.fg_batter_vars(batter_data)
@@ -119,8 +128,9 @@ salary_data = NonLinearVars.salary_vars(salary_data)
 
 # Merge data sets (one pitcher, one batter)
 batter_merged = pd.merge(batter_data, salary_data, left_on=['Name', 'Year'], right_on=['Player', 'Season'])
+batter_merged = batter_merged[(batter_merged['Position'] != "SP") & (batter_merged['Position'] != "RP")]  # remove P's
 print(len(batter_merged))
 
 pitcher_merged = pd.merge(pitcher_data, salary_data, left_on=['Name', 'Year'], right_on=['Player', 'Season'])
+pitcher_merged = pitcher_merged[(pitcher_merged['Position'] == "SP") | (pitcher_merged['Position'] == "RP")]  # keep P's
 print(len(pitcher_merged))
-
