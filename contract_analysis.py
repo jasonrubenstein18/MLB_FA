@@ -1,5 +1,9 @@
 import pandas as pd
 import numpy as np
+from sklearn import linear_model
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+import matplotlib.pyplot as plt
 
 # Read in data
 batter_data = pd.read_csv("~/Desktop/MLB_FA/fg_bat_data.csv")
@@ -48,6 +52,13 @@ class Metrics:
         df['wRC+'] = pd.to_numeric(df['wRC+'])
         df['y_n1_wRC+'] = df.groupby("Name")['wRC+'].shift(1)
         df['y_n2_wRC+'] = df.groupby("Name")['y_n1_wRC+'].shift(1)
+
+        df["BB%"] = df["BB%"].apply(lambda x: x.replace("%", ""))
+        df['BB%'] = pd.to_numeric(df['BB%'])
+        df["K%"] = df["K%"].apply(lambda x: x.replace("%", ""))
+        df['K%'] = pd.to_numeric(df['K%'])
+
+        df.rename(columns={'BB%': 'BBpct', 'K%': 'Kpct'}, inplace=True)
         return df
 
     def lagged_pitcher(df):
@@ -66,12 +77,39 @@ class Metrics:
         df['xFIP'] = pd.to_numeric(df['xFIP'])
         df['y_n1_xFIP'] = df.groupby("Name")['xFIP'].shift(1)
         df['y_n2_xFIP'] = df.groupby("Name")['y_n1_xFIP'].shift(1)
+
+        df['BB%'] = df['BB%'].astype(str)
+        df["BB%"] = df["BB%"].apply(lambda x: x.replace("%", ""))
+        df['BB%'] = pd.to_numeric(df['BB%'])
+
+        df['K%'] = df['K%'].astype(str)
+        df["K%"] = df["K%"].apply(lambda x: x.replace("%", ""))
+        df['K%'] = pd.to_numeric(df['K%'])
+
+        df['K-BB%'] = df['K-BB%'].astype(str)
+        df["K-BB%"] = df["K-BB%"].apply(lambda x: x.replace("%", ""))
+        df['K-BB%'] = pd.to_numeric(df['K-BB%'])
+
+        df['CB%'] = pd.to_numeric(df['CB%'])
+
+        df.rename(columns={'BB%': 'BBpct', 'K%': 'Kpct', 'K-BB%': 'K_minus_BBpct', 'CB%': 'CBpct'}, inplace=True)
         return df
 
     def fix_position(df):
         df['Position'] = np.where(df['Position'] == "OF", "CF", df['Position'])
         df['Position'] = np.where((df['Position'] == "LF") | (df['Position'] == "RF"),
                                   "Corner Outfield", df['Position'])
+        df['Position'] = np.where(df['Position'] == "P", "RP", df['Position'])
+        # df['Position'] = np.where(df['Position'] == "SP", 1, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "C", 2, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "1B", 3, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "2B", 4, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "3B", 5, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "SS", 6, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "Corner Outfield", 7, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "CF", 8, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "RP", 9, df['Position'])
+        # df['Position'] = np.where(df['Position'] == "DH", 10, df['Position'])
         return df
 
 
@@ -134,3 +172,74 @@ print(len(batter_merged))
 pitcher_merged = pd.merge(pitcher_data, salary_data, left_on=['Name', 'Year'], right_on=['Player', 'Season'])
 pitcher_merged = pitcher_merged[(pitcher_merged['Position'] == "SP") | (pitcher_merged['Position'] == "RP")]  # keep P's
 print(len(pitcher_merged))
+
+# Begin modeling
+train_data_batter = batter_merged[(batter_merged['Year'] != max(batter_merged['Year']))]
+
+test_data_batter = batter_merged[(batter_merged['Year'] == max(batter_merged['Year'])) &
+                                 (np.isnan(batter_merged['NPV']))]
+
+fit = ols('NPV ~ C(Position) + WAR_sq + WAR + Age', data=train_data_batter).fit()
+fit.summary()  # 0.682 r-sq, 0.674 adj r-sq
+
+# remove linear WAR
+# Let's add a season factor and qualifying offer
+fit = ols('NPV ~ C(Position) + C(Season) + WAR_sq + Age + Qual', data=train_data_batter).fit()
+fit.summary()  # 0.738 r-sq, 0.726 adj r-sq
+
+# Getting better, but there's more unexplained variance. Let's try log of Age and prior season's WAR
+# Log Age
+fit = ols('NPV ~ C(Position) + C(Season) + y_n1_war_sq +  WAR_sq + Age_log + Qual', data=train_data_batter).fit()
+fit.summary()  # 0.771 r-sq, 0.759 adj r-sq
+
+# Still marginally improving. Up to around 50% of the variance explained.
+# WAR is a counting stat, let's add in base-running UBR, non-log Age
+# UBR
+fit = ols('NPV ~ C(Position) + y_n1_war_sq +  WAR_sq + Age + UBR + Qual', data=train_data_batter).fit()
+fit.summary()  # 0.769 r-sq, 0.762 adj r-sq
+
+# Try some new variables (e.g. OPS, ISO, wRC+, wOBA, y_n2_war_sq, etc)
+fit = ols('NPV ~ C(Position) + y_n2_war_sq + y_n1_war_sq +  WAR_sq + Age + UBR + Qual + wOBA + ISO',
+          data=train_data_batter).fit()
+fit.summary()  # 0.792 r-sq, 0.783 adj r-sq
+
+# Now let's consider only deals signed for multiple-years
+train_data_batter_multiyear = train_data_batter[(train_data_batter['Years'] > 1)]
+fit = ols('NPV ~ C(Position) + y_n1_war_sq +  WAR_sq + Age + UBR + Qual', data=train_data_batter_multiyear).fit()
+fit.summary()  # 0.8 r-sq, 0.784 adj r-sq
+
+# Single year only
+train_data_batter_single = train_data_batter[(train_data_batter['Years'] == 1)]
+fit = ols('NPV ~ C(Position) + y_n1_war_sq +  WAR_sq + Age + Qual', data=train_data_batter_single).fit()
+fit.summary()  # 0.622 r-sq, 0.609 adj r-sq
+
+# So what are team's using to assess these single year contracts?
+fit = ols('NPV ~ ISO + WAR_sq + y_n1_war_sq + y_n2_war_sq + wGDP + BABIP + Qual', data=train_data_batter_single).fit()
+fit.summary()  # found that age isn't predictive of what a player received on a single year contract
+
+
+# Out of sample / in sample (pre 2021)
+
+X_train = train_data_batter[['WAR', 'WAR_sq', 'Age', 'Position']]
+Y_train = train_data_batter['NPV']
+regr = linear_model.LinearRegression()
+regr.fit(X_train,Y_train)
+print('Intercept: \n', regr.intercept_)
+print('Coefficients: \n', regr.coef_)
+
+# prediction with sklearn
+WAR = 3
+WAR_sq = 9
+AGE = 30
+POSITION = 3
+print('Predicted NPV: \n', regr.predict([[WAR, WAR_sq, AGE, POSITION]]))
+print('Accuracy Score: ', regr.score(X_train, Y_train))
+
+# with statsmodels
+X = sm.add_constant(X_train)  # adding a constant
+
+model = sm.OLS(Y_train, X_train).fit()
+predictions = model.predict(X_train)
+
+print_model = model.summary()
+print(print_model)
