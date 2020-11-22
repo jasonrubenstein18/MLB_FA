@@ -5,7 +5,7 @@ import numpy as np
 # Scrape ESPN Free Agent Tracker for free agent contracts
 years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
 
-appended_salary_data = pd.DataFrame()
+espn_salary_data = pd.DataFrame()
 espn_urls = []
 
 for y in years:
@@ -23,10 +23,14 @@ for url in espn_urls:
     espn_salary_table = espn_salary_table.rename(columns={espn_salary_table.columns[4]: "PREV TEAM"})
     espn_salary_table = espn_salary_table[espn_salary_table['PLAYER'] != "PLAYER"].reset_index(drop=True)
     espn_salary_table['Season'] = espn_url['year'][0]
-    appended_salary_data = appended_salary_data.append(espn_salary_table, ignore_index=True)
+    espn_salary_data = espn_salary_data.append(espn_salary_table, ignore_index=True)
     time.sleep(5)
 
-espn_data = appended_salary_data
+espn_salary_data['Season'] = espn_salary_data['Season'].astype('int') + 1
+espn_salary_data['YRS'] = espn_salary_data['YRS'].fillna(0)
+espn_salary_data['YRS'] = espn_salary_data['YRS'].astype('int')
+
+espn_data = espn_salary_data[(espn_salary_data['Season']) < 2022]
 
 
 # Scrape MLB Trade Rumors FA Tracker for option and qualifying offer data
@@ -55,10 +59,6 @@ mlb_tr_data['Season'] = mlb_tr_data['Season'].astype('int')
 mlb_tr_data['Years'] = mlb_tr_data['Years'].fillna(0)
 mlb_tr_data['Years'] = mlb_tr_data['Years'].astype('int')
 
-espn_data['Season'] = espn_data['Season'].astype('int')
-espn_data['YRS'] = espn_data['YRS'].fillna(0)
-espn_data['YRS'] = espn_data['YRS'].astype('int')
-
 
 # Fix column names
 espn_data.columns = ['Player', 'Position', 'Age', 'Status', 'Prev Team', 'Team', 'Years', 'Rank', 'Salary', 'Season']
@@ -70,6 +70,9 @@ mlb_tr_data = mlb_tr_data[['Player', 'Team', 'Qual', 'Years', 'Amount', 'Option'
 # Merge espn and tr data on player name, team, and season year
 salary_data = pd.merge(espn_data, mlb_tr_data, how='left',
                        left_on=['Player', 'Team', 'Season'], right_on=['Player', 'Team', 'Season'])
+
+# salary_data['Qual'] = salary_data['Qual'].fillna(0)
+# print(salary_data['Qual'].unique())
 
 
 def salary_formatting(df):
@@ -92,8 +95,8 @@ def salary_formatting(df):
     
     # replace -- from ESPN with mlb_tr data
     df['Salary'] = np.where(df['Salary'] == "--",
-                                     df['Amount'],
-                                     df['Salary'])
+                            df['Amount'],
+                            df['Salary'])
     
     # Secondary column used to reformat salaries such as ($1.5MM)
     df['Value'] = 0
@@ -101,8 +104,8 @@ def salary_formatting(df):
     
     # Refine minor league definition
     df['Salary'] = np.where((df['Value'] == 1) & (df['Salary'] == "Minor Lg"),
-                                     df['Amount'],
-                                     df['Salary'])
+                            df['Amount'],
+                            df['Salary'])
     
     df['fix_salary_format'] = 0
     df.loc[df['Salary'].str.contains('MM', na=False), 'fix_salary_format'] = df['Salary']
@@ -111,23 +114,36 @@ def salary_formatting(df):
     df['fix_salary_format'] = df['fix_salary_format'].fillna(0)
     df['fix_salary_format'] = pd.to_numeric(df['fix_salary_format'])
     df['fix_salary_format'] = np.where(df['fix_salary_format'] > 0,
-                                                df['fix_salary_format'] * 1000000,
-                                                df['fix_salary_format'])
+                                       df['fix_salary_format'] * 1000000,
+                                       df['fix_salary_format'])
     df['Salary'] = np.where(df['fix_salary_format'] > 0,
-                                     df['fix_salary_format'],
-                                     df['Salary'])
+                            df['fix_salary_format'],
+                            df['Salary'])
     df['Salary'] = np.where((df['Salary'] == "Minor Lg") | (df['Salary'] == "Minor"),
-                                     600000,
-                                     df['Salary'])
+                            600000,
+                            df['Salary'])
     df['Salary'] = df['Salary'].str.replace(",", "")
     df['Salary'] = df['Salary'].fillna(0)
+
+    # fix "K" values
+    df['fix_salary_format'] = 0
+    df.loc[df['Salary'].str.contains('K', na=False), 'fix_salary_format'] = df['Salary']
+    df['fix_salary_format'] = df['fix_salary_format'].astype('str')
+    df['fix_salary_format'] = df['fix_salary_format'].str.replace("K", "")
+    df['fix_salary_format'] = df['fix_salary_format'].str.replace("$", "")
+    df['fix_salary_format'] = pd.to_numeric(df['fix_salary_format'])
+    df['fix_salary_format'] = df['fix_salary_format'] * 1000
+    df['Salary'] = np.where(df['fix_salary_format'] > 0,
+                            df['fix_salary_format'],
+                            df['Salary'])
+    df = df[(df['Salary'] != "Unknown")]
     df['Salary'] = pd.to_numeric(df['Salary'])
     
     # binary; 1 = received QO
     df['Qual'] = df['Qual'].fillna(0)
     df['Qual'] = df['Qual'].replace("No", 0)
     df['Qual'] = np.where(df['Qual'] != 0,
-                                   1, 0)
+                          1, 0)
     
     # Option either Not Incl, Club, or Opt Out
     df['Option'] = df['Option'].fillna('No')
@@ -137,6 +153,7 @@ def salary_formatting(df):
 
 
 salary_data = salary_formatting(salary_data)
+
 
 # Remove 0 salary players
 salary_data = salary_data[(salary_data['Salary'] > 0) | (salary_data['Season'] == max(salary_data['Season']))]
