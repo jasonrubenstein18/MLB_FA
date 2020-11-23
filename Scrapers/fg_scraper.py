@@ -84,7 +84,7 @@ for url in urls:
     df = df[df.index > 89].reset_index(drop=True)
     df = df.iloc[:-5].reset_index(drop=True)
     df_fix = pd.DataFrame(np.reshape(df.values, (df.shape[0] // 27, 27)),
-                          columns=['Num', 'Name', "K/9", "BB/9", "K/BB", "HR/9", "K%", "BB%", "K-BB%", "AVG", "WHIP",
+                          columns=['Num', 'Name', "Team", "BB/9", "K/BB", "HR/9", "K%", "BB%", "K-BB%", "AVG", "WHIP",
                                    "BABIP", "LOB%", "ERA-", "FIP-", "xFIP-", "ERA", "FIP", "E-F", "xFIP", "SIERA",
                                    "WAR", "RAR", "FBv", "CBv", "CB%", "Year"
                                    ])
