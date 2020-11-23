@@ -103,7 +103,9 @@ fig.show()
 
 def grouping(df):
     df['Year'] = df['Date'].dt.year + 1  # Create season variable to align with year of FA
-    df['injury_total'] = df.groupby(['Year', 'Player'])['injury_duration'].transform(lambda x: x.sum())
+    df = df.groupby(['Year', 'Player']).agg({
+        'injury_duration': sum,
+    }).reset_index()
     return df
 
 
@@ -119,4 +121,4 @@ fig.show()
 # Find % of free agent contract signers that are in this injury dataset
 # Find % of free agent players who are in the fangraphs dataset
 
-injury_final.to_csv("~/Desktop/MLB_FA/injury_data.csv", index=False)
+injury_final.to_csv("~/Desktop/MLB_FA/injury_data_use.csv", index=False)
