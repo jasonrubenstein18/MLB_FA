@@ -3,8 +3,10 @@ import numpy as np
 import time
 import datetime
 import plotly_express as px
+import requests
 
 
+### prosports transactions dot com
 injury_data = pd.DataFrame()
 injury_urls = []
 
@@ -102,11 +104,16 @@ fig.show()
 
 
 def grouping(df):
+    array_func = lambda x: set(x)
+    injuries_array = df.pivot_table(index=['Player', 'Year'], values='Injury',
+                                    aggfunc=array_func, margins=False).reset_index()
     df['Year'] = df['Date'].dt.year + 1  # Create season variable to align with year of FA
     df = df.groupby(['Year', 'Player']).agg({
         'injury_duration': sum,
     }).reset_index()
-    return df
+
+    df_merged = pd.merge(df, injuries_array, on=['Player', 'Year'], how='left')
+    return df_merged
 
 
 injury_final = grouping(injury_working)
@@ -121,4 +128,20 @@ fig.show()
 # Find % of free agent contract signers that are in this injury dataset
 # Find % of free agent players who are in the fangraphs dataset
 
-injury_final.to_csv("~/Desktop/MLB_FA/injury_data_use.csv", index=False)
+injury_final.to_csv("~/Desktop/MLB_FA/pst_injury_data.csv", index=False)
+
+
+### MLB dot com transactions
+
+mlb_injury_data = pd.DataFrame()
+mlb_injury_urls = []
+
+for year in range(2005, 2019, 1):
+    r = requests.get("http://lookup-service-prod.mlb.com/json/named.transaction_all.bam?start_date={0}0101&e"
+                     "nd_date={1}1231&sport_code=%27mlb%27".format(year, year+1)).json()
+    transaction_data = pd.DataFrame(r['transaction_all']['queryResults']['row'])
+    mlb_injury_data = mlb_injury_data.append(transaction_data, ignore_index=True)
+
+inj_only = mlb_injury_data[(mlb_injury_data['type'] == "Status Change")]
+
+inj_only.to_csv("~/Desktop/MLB_FA/mlb_injury_data.csv", index=False)
