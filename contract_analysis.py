@@ -6,27 +6,27 @@ from statsmodels.formula.api import ols
 import plotly_express
 
 # Read in data
-batter_data = pd.read_csv("~/Desktop/MLB_FA/fg_bat_data.csv")
+batter_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_bat_data.csv")
 del batter_data['Unnamed: 0']
 print(len(batter_data))
 print(batter_data.head())
 
-pitcher_data = pd.read_csv("~/Desktop/MLB_FA/fg_pitch_data.csv")
+pitcher_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_pitch_data.csv")
 print(len(pitcher_data))
 print(pitcher_data.head())
 
-salary_data = pd.read_csv("~/Desktop/MLB_FA/salary_data.csv")
+salary_data = pd.read_csv("~/Desktop/MLB_FA/Data/salary_data.csv")
 del salary_data['Unnamed: 0']
 print(len(salary_data))
 
-injury_data = pd.read_csv("~/Desktop/MLB_FA/injury_data_use.csv")
+injury_data = pd.read_csv("~/Desktop/MLB_FA/Data/injury_data_use.csv")
 
 # Check for whether there is overlap between injury data and the salary data players
-injury_data_players = injury_data['Player'].unique()
-mutual = salary_data[salary_data['Player'].isin(injury_data_players)]  # 945 out of 1135 players included
-excl = salary_data[~salary_data['Player'].isin(injury_data_players)]
+# injury_data_players = injury_data['Player'].unique()
+# mutual = salary_data[salary_data['Player'].isin(injury_data_players)]  # 945 out of 1135 players included
+# excl = salary_data[~salary_data['Player'].isin(injury_data_players)]
 
-print(len(excl['Player'].unique()))  # 129 unique players injury data omitted; need to leverage mlb.com trans for these
+# print(len(excl['Player'].unique()))  # 129 unique players injury data omitted; use mlb.com trans for these
 
 
 # Define inflation
@@ -114,9 +114,21 @@ class Metrics:
         df["K-BB%"] = df["K-BB%"].apply(lambda x: x.replace("%", ""))
         df['K-BB%'] = pd.to_numeric(df['K-BB%'])
 
-        df['CB%'] = pd.to_numeric(df['CB%'])
+        df['SwStr%'] = df['SwStr%'].astype(str)
+        df["SwStr%"] = df["SwStr%"].apply(lambda x: x.replace("%", ""))
+        df['SwStr%'] = pd.to_numeric(df['SwStr%'])
 
-        df.rename(columns={'BB%': 'BBpct', 'K%': 'Kpct', 'K-BB%': 'K_minus_BBpct', 'CB%': 'CBpct'}, inplace=True)
+        df['LOB%'] = df['LOB%'].astype(str)
+        df["LOB%"] = df["LOB%"].apply(lambda x: x.replace("%", ""))
+        df['LOB%'] = pd.to_numeric(df['LOB%'])
+
+
+        # df['CB%'] = df['CB%'].astype(str)
+        # df["CB%"] = df["CB%"].apply(lambda x: x.replace("%", ""))
+        # df['CB%'] = pd.to_numeric(df['CB%'])
+
+        df.rename(columns={'BB%': 'BBpct', 'K%': 'Kpct', 'K-BB%': 'K_minus_BBpct', 'CB%': 'CBpct',
+                           'SwStr%': 'Swstrpct'}, inplace=True)
         return df
 
     def fix_position(df):
@@ -138,12 +150,20 @@ class Metrics:
 
     def rate_stats_batter(df):
         df['WAR_PA'] = df['WAR'] / df['PA']  # add in rate based WAR (per PA, game played, etc)
+        df['oWAR_PA'] = df['oWAR'] / df['PA']
 
+        df['WAR_PA'] = round(df['WAR_PA'], 3)
+        df['oWAR_PA'] = round(df['oWAR_PA'], 3)
         return df
 
     def rate_stats_pitcher(df):
         df['WAR_TBF'] = df['WAR'] / df['TBF']  # add in rate based WAR (per IP, etc)
+        # df['WAR_IP'] = df['WAR'] / df['IP']
+        df['wFB_TBF'] = df['wFB'] / df['TBF']
 
+        df['WAR_TBF'] = round(df['WAR_TBF'], 3)
+        # df['WAR_IP'] = round(df['WAR_IP'], 3)
+        df['wFB_TBF'] = round(df['wFB_TBF'], 3)
         return df
 
     def injury_engineering(df):
@@ -151,18 +171,32 @@ class Metrics:
         df.loc[:, "two_year_inj_avg"] = (
                 df.groupby("Player")["injury_duration"].shift(1) / df.groupby("Player")["injury_duration"].shift(
             2) - 1)
+        df['Injury'] = df['Injury'].fillna("None")
+        df['injury_duration'] = df['injury_duration'].fillna(0)
+        return df
+
+    def short_season_fix_batter(df):
+        df['WAR_162'] = np.where(df['Year'] == 2021, df['WAR']*2.3, df['WAR'])
+        df['PA_162'] = np.where(df['Year'] == 2021, df['PA']*2.3, df['PA'])
+        df['oWAR_162'] = np.where(df['Year'] == 2021, df['oWAR'] * 2.3, df['oWAR'])
+        df['dWAR_162'] = np.where(df['Year'] == 2021, df['dWAR'] * 2.3, df['dWAR'])
+        return df
+
+    def short_season_fix_pitcher(df):
+        df['WAR_162'] = np.where(df['Year'] == 2021, df['WAR']*2.3, df['WAR'])
+        df['IP_162'] = np.where(df['Year'] == 2021, df['IP']*2.3, df['IP'])
         return df
 
 
 class NonLinearVars():
     def fg_batter_vars(df):
-        df['WAR_sq'] = df['WAR'] ** 2
-        df['y_n1_war_sq'] = df['y_n1_war'] ** 2
-        df['y_n2_war_sq'] = df['y_n2_war'] ** 2
-        df['y_n3_war_sq'] = df['y_n3_war'] ** 2
-        df['y_n4_war_sq'] = df['y_n4_war'] ** 2
-        df['y_n5_war_sq'] = df['y_n5_war'] ** 2
-        df['y_n6_war_sq'] = df['y_n6_war'] ** 2
+        df['WAR_sq'] = np.where(df['WAR'] > 0, df['WAR'] ** 2, df['WAR'] * 2)
+        df['y_n1_war_sq'] = np.where(df['y_n1_war'] > 0, df['y_n1_war'] ** 2, df['y_n1_war'] * 2)
+        df['y_n2_war_sq'] = np.where(df['y_n2_war'] > 0, df['y_n2_war'] ** 2, df['y_n2_war'] * 2)
+        df['y_n3_war_sq'] = np.where(df['y_n3_war'] > 0, df['y_n3_war'] ** 2, df['y_n3_war'] * 2)
+        df['y_n4_war_sq'] = np.where(df['y_n4_war'] > 0, df['y_n4_war'] ** 2, df['y_n4_war'] * 2)
+        df['y_n5_war_sq'] = np.where(df['y_n5_war'] > 0, df['y_n5_war'] ** 2, df['y_n5_war'] * 2)
+        df['y_n6_war_sq'] = np.where(df['y_n6_war'] > 0, df['y_n6_war'] ** 2, df['y_n6_war'] * 2)
         df['y_n1_wOBA_sq'] = df['y_n1_wOBA'] ** 2
         df['y_n2_wOBA_sq'] = df['y_n2_wOBA'] ** 2
         df['y_n1_wRC+_sq'] = df['y_n1_wRC+'] ** 2
@@ -171,12 +205,12 @@ class NonLinearVars():
 
     def fg_pitcher_vars(df):
         df['WAR_sq'] = df['WAR'] **2
-        df['y_n1_war_sq'] = df['y_n1_war'] **2
-        df['y_n2_war_sq'] = df['y_n2_war'] **2
-        df['y_n3_war_sq'] = df['y_n3_war'] **2
-        df['y_n3_war_sq'] = df['y_n4_war'] **2
-        df['y_n3_war_sq'] = df['y_n5_war'] **2
-        df['y_n3_war_sq'] = df['y_n6_war'] **2
+        df['y_n1_war_sq'] = np.where(df['y_n1_war'] > 0, df['y_n1_war'] ** 2, df['y_n1_war'] * 2)
+        df['y_n2_war_sq'] = np.where(df['y_n2_war'] > 0, df['y_n2_war'] ** 2, df['y_n2_war'] * 2)
+        df['y_n3_war_sq'] = np.where(df['y_n3_war'] > 0, df['y_n3_war'] ** 2, df['y_n3_war'] * 2)
+        df['y_n4_war_sq'] = np.where(df['y_n4_war'] > 0, df['y_n4_war'] ** 2, df['y_n4_war'] * 2)
+        df['y_n5_war_sq'] = np.where(df['y_n5_war'] > 0, df['y_n5_war'] ** 2, df['y_n5_war'] * 2)
+        df['y_n6_war_sq'] = np.where(df['y_n6_war'] > 0, df['y_n6_war'] ** 2, df['y_n6_war'] * 2)
         # df['ERA-_sq'] = df['ERA-'] **2
         # df['y_n1_ERA-_sq'] = df['y_n1_ERA-'] **2
         # df['y_n2_ERA-_sq'] = df['y_n2_ERA-'] **2
@@ -205,8 +239,10 @@ salary_data = merge_injuries(salary_data, injury_data)
 print(len(salary_data))
 
 # Lag
+batter_data = Metrics.short_season_fix_batter(batter_data)
 batter_data = Metrics.rate_stats_batter(batter_data)
 batter_data = Metrics.lagged_batter(batter_data)
+pitcher_data = Metrics.short_season_fix_pitcher(pitcher_data)
 pitcher_data = Metrics.rate_stats_pitcher(pitcher_data)
 pitcher_data = Metrics.lagged_pitcher(pitcher_data)
 
@@ -239,19 +275,30 @@ test_data_batter = batter_merged[(batter_merged['Year'] == max(batter_merged['Ye
 test_data_pitcher = pitcher_merged[(pitcher_merged['Year'] == max(pitcher_merged['Year'])) &
                                    (np.isnan(pitcher_merged['NPV']))]
 
+train_data_batter.to_csv('~/Desktop/MLB_FA/Data/train_data_batter.csv', index=False)
+train_data_pitcher.to_csv('~/Desktop/MLB_FA/Data/train_data_pitcher.csv', index=False)
+test_data_batter.to_csv('~/Desktop/MLB_FA/Data/test_data_batter.csv', index=False)
+test_data_pitcher.to_csv('~/Desktop/MLB_FA/Data/test_data_pitcher.csv', index=False)
+
 fit = ols('NPV ~ C(Position) + WAR_sq + WAR + Age', data=train_data_batter).fit()
-fit.summary()  # 0.682 r-sq, 0.674 adj r-sq
+fit.summary()  # 0.597 r-sq, 0.587 adj r-sq
 
 # Plot NPV / WAR to see nonlinear relationship
 plot_data = train_data_batter[(train_data_batter['Year'] > 2015)]
-fig = plotly_express.scatter(plot_data, x="WAR", y="NPV",
+fig = plotly_express.scatter(plot_data, x="dWAR", y="NPV", color='Position',
                              hover_data=['Player', 'Position'])
 fig.show()
 
-# Plot WAR / WAR_PA
-plot_data = batter_data[(batter_data['Year'] == 2021) & (batter_data['PA'] > 5)]
-fig = plotly_express.scatter(plot_data, x="WAR", y="WAR_PA", color='Name',
-                             hover_data=['Name', 'Year'])
+# Plot WAR / Rate WAR
+plot_data = batter_data[(batter_data['Year'] == 2021) & (batter_data['PA'] > 100)]
+fig = plotly_express.scatter(plot_data, x="oWAR", y="oWAR_PA", color='Name')
+fig.update_layout(
+    hoverlabel=dict(
+        bgcolor="white",
+        font_size=10,
+        font_family="Arial"
+    )
+)
 fig.show()
 
 # remove linear WAR
@@ -294,56 +341,58 @@ fit.summary()
 fit = ols('NPV ~ ISO + WAR_sq + y_n1_war_sq + y_n2_war_sq + injury_duration + Qual', data=train_data_batter).fit()
 fit.summary()
 
+# Kitchen sink
+fit_rate = ols('NPV ~ BBpct + Kpct + AVG + OBP + SLG + OPS + ISO + Spd + BABIP + UBR + wGDP + wSB + wRC + '
+               'wRAA + wOBA + WAR + dWAR + oWAR + Year + WAR_PA + oWAR_PA + y_n1_war + y_n2_war + y_n3_war + '
+               'y_n4_war + y_n5_war + y_n6_war + y_n1_wOBA + y_n2_wOBA + y_n3_wOBA + y_n4_wOBA + '
+               'y_n1_war_pa + y_n2_war_pa + y_n3_war_pa + y_n4_war_pa + y_n5_war_pa + y_n6_war_pa +'
+               'WAR_sq + y_n1_war_sq + y_n2_war_sq + y_n3_war_sq + y_n4_war_sq + y_n5_war_sq + y_n6_war_sq + '
+               'y_n1_wOBA_sq + y_n2_wOBA_sq + Position + Age + Qual + injury_duration', data=train_data_batter).fit()
+fit_rate.summary()
+
+# Remove unwanted vars
+fit_rate = ols('NPV ~ Kpct + Year + y_n1_war +'
+               'y_n1_wOBA + y_n2_war_pa + WAR_sq + y_n1_war_sq + y_n2_war_sq + y_n3_war_sq +'
+               'Age + Qual', data=train_data_batter).fit()
+fit_rate.summary()
+
 
 # PITCHERS
-fit = ols('NPV ~ C(Position) + WAR_sq + Age + Qual', data=train_data_pitcher).fit()
+train_data_pitcher['pos_dummy'] = np.where(train_data_pitcher['Position'] == "SP", 1, 0)
+fit = ols('NPV ~ WAR_sq + Age + Qual + pos_dummy + FBv + Kpct + y_n1_war_sq', data=train_data_pitcher).fit()
+fit.summary()
+
+# Predict WAR
+fit = ols('WAR ~ FBv + Kpct + BBpct + FIP + IP + wFB + pos_dummy', data=pitcher_data).fit()
 fit.summary()
 
 # Let's add in injury duration
 train_data_pitcher['injury_duration_log'] = np.log(train_data_pitcher['injury_duration'])
-fit = ols('NPV ~ C(Position) + WAR_sq + Age + Qual + injury_duration', data=train_data_pitcher).fit()
+fit = ols('NPV ~ WAR_sq + Age + Qual + injury_duration + pos_dummy', data=train_data_pitcher).fit()
 fit.summary()
 
 # Add FBv
-fit = ols('NPV ~ C(Position) + WAR_sq + Age + Qual + injury_duration + FBv', data=train_data_pitcher).fit()
+fit = ols('NPV ~ WAR_sq + Age + Qual + injury_duration + FBv + pos_dummy', data=train_data_pitcher).fit()
 fit.summary()
 
 # Kpct
-fit = ols('NPV ~ Age + Qual + injury_duration + FBv + Kpct', data=train_data_pitcher).fit()
+fit = ols('NPV ~ Age + Qual + injury_duration + FBv + Kpct + pos_dummy', data=train_data_pitcher).fit()
 fit.summary()
 
 # CBv
-fit = ols('NPV ~ Age + Qual + injury_duration + FBv + Kpct + CBv', data=train_data_pitcher).fit()
+fit = ols('NPV ~ Age + Qual + injury_duration + FBv + Kpct + CBv + pos_dummy', data=train_data_pitcher).fit()
 fit.summary()
 
-print(list(train_data_pitcher))
+# Rate stats
+fit_rate = ols(
+    'NPV ~ Age + WAR_TBF + y_n1_war_tbf + y_n2_war_tbf + FBv + xFIP_sq + pos_dummy + injury_duration + Qual',
+    data=train_data_pitcher).fit()
+fit_rate.summary()
 
+multi_year_pitcher = train_data_pitcher[(train_data_pitcher['Years'] > 1)]
+fit_rate_multi = ols(
+    'NPV ~ Age + WAR_TBF + y_n1_war_tbf + y_n2_war_tbf + FBv + xFIP_sq + pos_dummy + injury_duration',
+    data=multi_year_pitcher).fit()
+fit_rate_multi.summary()
 
-# Clean up more metrics as seen in Class
-
-
-# Out of sample / in sample (pre 2021)
-
-X_train = train_data_batter[['WAR', 'WAR_sq', 'Age', 'Position']]
-Y_train = train_data_batter['NPV']
-regr = linear_model.LinearRegression()
-regr.fit(X_train, Y_train)
-print('Intercept: \n', regr.intercept_)
-print('Coefficients: \n', regr.coef_)
-
-# prediction with sklearn
-WAR = 3
-WAR_sq = WAR ** 2
-AGE = 30
-POSITION = 3
-print('Predicted NPV: \n', regr.predict([[WAR, WAR_sq, AGE, POSITION]]))
-print('Accuracy Score: ', regr.score(X_train, Y_train))
-
-# with statsmodels
-X = sm.add_constant(X_train)  # adding a constant
-
-model = sm.OLS(Y_train, X_train).fit()
-predictions = model.predict(X_train)
-
-print_model = model.summary()
-print(print_model)
+# Change position and Season to random effect
