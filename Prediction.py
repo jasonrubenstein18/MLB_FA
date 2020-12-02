@@ -7,14 +7,12 @@ import numpy as np
 # Read Data
 train_data_batter = pd.read_csv("~/Desktop/MLB_FA/Data/train_data_batter.csv")
 train_data_pitcher = pd.read_csv("~/Desktop/MLB_FA/Data/train_data_pitcher.csv")
-batter_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_bat_data.csv")
-pitcher_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_pitch_data.csv")
 salary_data = pd.read_csv("~/Desktop/MLB_FA/Data/salary_data.csv")
 injury_data = pd.read_csv("~/Desktop/MLB_FA/Data/injury_data_use.csv")
 
 # Batters
-model_data = train_data_batter[['NPV', 'Kpct', 'wOBA', 'Year', 'WAR_PA', 'y_n1_war',
-                                'y_n2_war', 'y_n1_war_sq', 'Position',
+model_data = train_data_batter[['NPV', 'Kpct', 'wOBA', 'Year', 'WAR_sq', 'y_n1_war',
+                                'y_n2_war', 'y_n1_war_sq', 'Position', 'dWAR_162',
                                 'y_n2_war_sq', 'Age', 'Qual', 'injury_duration']]  # .join(pos_dummies)
 
 print(len(model_data))
@@ -22,8 +20,8 @@ model_data['injury_duration'] = model_data['injury_duration'].fillna(0)
 model_data = model_data.dropna()
 print(len(model_data))
 
-X_train = model_data[['Kpct', 'wOBA', 'Year', 'WAR_PA', 'y_n1_war',
-                      'y_n2_war', 'y_n1_war_sq',
+X_train = model_data[['Kpct', 'wOBA', 'Year', 'WAR_sq', 'y_n1_war',
+                      'y_n2_war', 'y_n1_war_sq', 'dWAR_162',
                       # '1B', '2B', '3B', 'SS', 'C', 'Corner Outfield', 'CF', 'DH',
                       'y_n2_war_sq', 'Age', 'Qual', 'injury_duration']]
 Y_train = model_data['NPV']
@@ -40,6 +38,7 @@ def predict_batter_contract(player):
     WAR_PA_sq = WAR_PA ** 2
     WAR = batter_data[(batter_data['Name'] == player)]['WAR_162'].iloc[[-1]].reset_index(drop=True)
     WAR_SQ = WAR ** 2
+    DWAR = batter_data[(batter_data['Name'] == player)]['dWAR_162'].iloc[[-1]].reset_index(drop=True)
     Y_N1_WAR = batter_data[(batter_data['Name'] == player)]['y_n1_war'].iloc[[-1]].reset_index(drop=True)
     Y_N1_WAR_SQ = Y_N1_WAR ** 2
     Y_N2_WAR = batter_data[(batter_data['Name'] == player)]['y_n2_war'].iloc[[-1]].reset_index(drop=True)
@@ -58,23 +57,33 @@ def predict_batter_contract(player):
     # IP = 139
     # FBv = 93.3
     # INJURY = 23
-    print('Predicted NPV: \n', regr.predict([[KPCT, WOBA, YEAR, WAR_PA, Y_N1_WAR,
-                                              Y_N2_WAR, Y_N1_WAR_SQ,
+    print('Predicted NPV: \n', regr.predict([[KPCT, WOBA, YEAR, WAR_SQ, Y_N1_WAR,
+                                              Y_N2_WAR, Y_N1_WAR_SQ, DWAR,
                                               Y_N2_WAR_SQ, AGE, QUAL, INJURY]]))
     print('Accuracy Score: ', regr.score(X_train, Y_train))
 
 
-predict_batter_contract("J.T. Realmuto")
+predict_batter_contract("George Springer")
 
+
+# with statsmodels
+X = sm.add_constant(X_train)  # adding a constant
+
+model = sm.OLS(Y_train, X_train).fit()
+predictions = model.predict(X_train)
+
+print_model = model.summary()
+print(print_model)
 
 
 # Pitchers
 train_data_pitcher['pos_dummy'] = np.where(train_data_pitcher['Position'] == "SP", 1, 0)
-fit = ols('NPV ~ WAR_sq + Age + Qual + pos_dummy + FBv + Kpct + y_n1_war_sq', data=train_data_pitcher).fit()
-fit.summary()
+# fit = ols('NPV ~ WAR_sq + Age + Qual + pos_dummy + FBv + Kpct + y_n1_war_sq', data=train_data_pitcher).fit()
+# fit.summary()
 
 model_data = train_data_pitcher[['NPV', 'WAR_sq', 'Age', 'Qual', 'pos_dummy', 'FBv', 'Kpct', 'y_n1_war_sq']]
 model_data['FBv'].fillna(value=model_data['FBv'].mean(), inplace=True)
+# model_data['injury_duration'].fillna(0, inplace=True)
 model_data['y_n1_war_sq'].fillna(value=model_data['y_n1_war_sq'].mean(), inplace=True)
 
 X_train = model_data[['WAR_sq', 'Age', 'Qual', 'pos_dummy', 'FBv', 'Kpct', 'y_n1_war_sq']]
@@ -108,7 +117,7 @@ def predict_pitcher_contract(player):
     print('Accuracy Score: ', regr.score(X_train, Y_train))
 
 
-predict_pitcher_contract("Brad Hand")
+predict_pitcher_contract("Trevor May")
 
 
 # with statsmodels
