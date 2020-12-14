@@ -24,17 +24,17 @@ batter_model_data = train_data_batter[['NPV', 'Kpct', 'wOBA', 'Year', 'WAR_sq',
 
 batter_model_data = batter_model_data.dropna()
 
-X_train = batter_model_data[['Kpct', 'Year', 'WAR_sq',
-                             'y_n1_war_sq',
-                             # '1B', '2B', '3B', 'SS', 'C', 'Corner Outfield', 'CF', 'DH',
-                             'Age', 'Qual', 'injury_duration']]
-Y_train = batter_model_data['NPV']
+X_train_batter = batter_model_data[['Kpct', 'Year', 'WAR_sq',
+                                    'y_n1_war_sq',
+                                    # '1B', '2B', '3B', 'SS', 'C', 'Corner Outfield', 'CF', 'DH',
+                                    'Age', 'Qual', 'injury_duration']]
+Y_train_batter = batter_model_data['NPV']
 
 
 # Linear regression
 regr = linear_model.LinearRegression()
 
-regr.fit(X_train, Y_train)
+regr.fit(X_train_batter, Y_train_batter)
 print('Intercept: \n', regr.intercept_)
 print('Coefficients: \n', regr.coef_)
 
@@ -97,7 +97,7 @@ def predict_batter_contract(player):
     print('Accuracy Score: ', regr_aav.score(X_train, Y_train_aav))
 
 
-predict_batter_contract("Yadier Molina")  # Fringier one year guys AAV is more accurate than NPV
+predict_batter_contract("George Springer")  # Fringier one year guys AAV is more accurate than NPV
 
 # All Pitchers
 train_data_pitcher['pos_dummy'] = np.where(train_data_pitcher['Position'] == "SP", 1, 0)
@@ -171,17 +171,16 @@ predict_pitcher_contract("Liam Hendriks")
 ridge_data = train_data_pitcher[['NPV', 'WAR_sq', 'Age', 'Qual', 'pos_dummy',
                                  'FBv', 'Kpct', 'y_n1_war_sq', 'injury_duration']]
 ridge_data = ridge_data.dropna().reset_index(drop=True)
-X_train = ridge_data[['WAR_sq', 'Age', 'Qual', 'pos_dummy', 'FBv', 'Kpct', 'y_n1_war_sq', 'injury_duration']]
-Y_train = ridge_data['NPV']
-
+X_train_pitcher = ridge_data[['WAR_sq', 'Age', 'Qual', 'pos_dummy', 'FBv', 'Kpct', 'y_n1_war_sq', 'injury_duration']]
+Y_train_pitcher = ridge_data['NPV']
 
 model = Ridge(alpha=0)
 cv = RepeatedKFold(n_splits=10, n_repeats=6, random_state=1)
-scores = cross_val_score(model, X_train, Y_train, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
+scores = cross_val_score(model, X_train_pitcher, Y_train_pitcher, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
 scores = absolute(scores)
 print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
 
-model.fit(X_train, Y_train)
+model.fit(X_train_pitcher, Y_train_pitcher)
 
 
 def find_pitcher(player):
@@ -193,3 +192,24 @@ def find_pitcher(player):
 
 
 find_pitcher("Liam Hendriks")
+
+
+# Ridge regression -- batter (TBD)
+model = Ridge(alpha=0)
+cv = RepeatedKFold(n_splits=10, n_repeats=6, random_state=1)
+scores = cross_val_score(model, X_train_batter, Y_train_batter, scoring='neg_mean_absolute_error', cv=cv, n_jobs=-1)
+scores = absolute(scores)
+print('Mean MAE: %.3f (%.3f)' % (mean(scores), std(scores)))
+
+model.fit(X_train_batter, Y_train_batter)
+
+
+def find_batter(player):
+    data = test_data_batter[(test_data_batter['Player'] == player)]
+    data = data[['Kpct', 'Year', 'WAR_sq', 'y_n1_war_sq', 'Age', 'Qual', 'injury_duration']]
+    row = data.values[-1].tolist()
+    yhat = model.predict([row])
+    print('Predicted: %.3f' % yhat)
+
+
+find_batter("George Springer")
