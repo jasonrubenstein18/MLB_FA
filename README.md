@@ -9,3 +9,6 @@ Data Scraping:
 
 Analysis:
 - contract_analysis.py
+
+Predictions:
+- predictions.py
