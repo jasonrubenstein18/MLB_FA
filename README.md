@@ -11,4 +11,4 @@ Analysis:
 - contract_analysis.py
 
 Predictions:
-- predictions.py
+- Prediction.py
