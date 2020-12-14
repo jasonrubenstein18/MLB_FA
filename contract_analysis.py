@@ -1,22 +1,22 @@
 import pandas as pd
 import numpy as np
-from sklearn import linear_model
-import statsmodels.api as sm
 from statsmodels.formula.api import ols
 import plotly_express
+import plotly.graph_objs as go
+from plotly.subplots import make_subplots
 
 # Read in data
 batter_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_bat_data.csv")
-del batter_data['Unnamed: 0']
+del batter_data['Age']
 print(len(batter_data))
 print(batter_data.head())
 
 pitcher_data = pd.read_csv("~/Desktop/MLB_FA/Data/fg_pitch_data.csv")
+del pitcher_data['Age']
 print(len(pitcher_data))
 print(pitcher_data.head())
 
 salary_data = pd.read_csv("~/Desktop/MLB_FA/Data/salary_data.csv")
-del salary_data['Unnamed: 0']
 print(len(salary_data))
 
 injury_data = pd.read_csv("~/Desktop/MLB_FA/Data/injury_data_use.csv")
@@ -234,9 +234,13 @@ def merge_injuries(salary_df, injury_df):
     return merged_df
 
 
+# MA
 print(len(salary_data))
 salary_data = merge_injuries(salary_data, injury_data)
 print(len(salary_data))
+salary_data['injury_duration'] = salary_data['injury_duration'].fillna(0)
+salary_data = Metrics.injury_engineering(salary_data)
+
 
 # Lag
 batter_data = Metrics.short_season_fix_batter(batter_data)
@@ -248,9 +252,6 @@ pitcher_data = Metrics.lagged_pitcher(pitcher_data)
 
 # Position fix
 salary_data = Metrics.fix_position(salary_data)
-
-# MA
-injury_data = Metrics.injury_engineering(injury_data)
 
 # Non Linears
 batter_data = NonLinearVars.fg_batter_vars(batter_data)
@@ -267,13 +268,19 @@ pitcher_merged = pitcher_merged[(pitcher_merged['Position'] == "SP") | (pitcher_
 print(len(pitcher_merged))
 
 # Begin modeling
-train_data_batter = batter_merged[(batter_merged['Year'] != max(batter_merged['Year']))]
-train_data_pitcher = pitcher_merged[(pitcher_merged['Year'] != max(pitcher_merged['Year']))]
+# train_data_batter = batter_merged[(batter_merged['Year'] != max(batter_merged['Year']))]
+# train_data_pitcher = pitcher_merged[(pitcher_merged['Year'] != max(pitcher_merged['Year']))]
 
-test_data_batter = batter_merged[(batter_merged['Year'] == max(batter_merged['Year'])) &
-                                 (np.isnan(batter_merged['NPV']))]
-test_data_pitcher = pitcher_merged[(pitcher_merged['Year'] == max(pitcher_merged['Year'])) &
-                                   (np.isnan(pitcher_merged['NPV']))]
+train_data_batter = batter_merged.loc[~batter_merged['NPV'].isnull()]
+train_data_pitcher = pitcher_merged.loc[~pitcher_merged['NPV'].isnull()]
+test_data_batter = batter_merged[
+    # (batter_merged['Year'] == max(batter_merged['Year']))
+    # &
+    (np.isnan(batter_merged['NPV']))]
+test_data_pitcher = pitcher_merged[
+    # (pitcher_merged['Year'] == max(pitcher_merged['Year']))
+    # &
+    (np.isnan(pitcher_merged['NPV']))]
 
 train_data_batter.to_csv('~/Desktop/MLB_FA/Data/train_data_batter.csv', index=False)
 train_data_pitcher.to_csv('~/Desktop/MLB_FA/Data/train_data_pitcher.csv', index=False)
@@ -284,14 +291,15 @@ fit = ols('NPV ~ C(Position) + WAR_sq + WAR + Age', data=train_data_batter).fit(
 fit.summary()  # 0.597 r-sq, 0.587 adj r-sq
 
 # Plot NPV / WAR to see nonlinear relationship
-plot_data = train_data_batter[(train_data_batter['Year'] > 2015)]
+plot_data = train_data_batter[(train_data_batter['Year'] > 2010)]
 fig = plotly_express.scatter(plot_data, x="dWAR", y="NPV", color='Position',
-                             hover_data=['Player', 'Position'])
+                             hover_data=['Player', 'Position', 'Year', 'Prev Team'],
+                             title="dWAR, NPV Colored By Position (since {})".format(min(plot_data['Year'])))
 fig.show()
 
 # Plot WAR / Rate WAR
 plot_data = batter_data[(batter_data['Year'] == 2021) & (batter_data['PA'] > 100)]
-fig = plotly_express.scatter(plot_data, x="oWAR", y="oWAR_PA", color='Name')
+fig = plotly_express.scatter(plot_data, x="PA", y="dWAR", color='Name')
 fig.update_layout(
     hoverlabel=dict(
         bgcolor="white",
@@ -352,10 +360,9 @@ fit_rate.summary()
 
 # Remove unwanted vars
 fit_rate = ols('NPV ~ Kpct + Year + y_n1_war +'
-               'y_n1_wOBA + y_n2_war_pa + WAR_sq + y_n1_war_sq + y_n2_war_sq + y_n3_war_sq +'
+               'y_n1_wOBA + y_n2_war_pa + WAR_sq + y_n1_war_sq +'
                'Age + Qual', data=train_data_batter).fit()
 fit_rate.summary()
-
 
 # PITCHERS
 train_data_pitcher['pos_dummy'] = np.where(train_data_pitcher['Position'] == "SP", 1, 0)
@@ -363,7 +370,7 @@ fit = ols('NPV ~ WAR_sq + Age + Qual + pos_dummy + FBv + Kpct + y_n1_war_sq', da
 fit.summary()
 
 # Predict WAR
-fit = ols('WAR ~ FBv + Kpct + BBpct + FIP + IP + wFB + pos_dummy', data=pitcher_data).fit()
+fit = ols('WAR ~ FBv + Kpct + BBpct + FIP + IP + wFB + pos_dummy', data=train_data_pitcher).fit()
 fit.summary()
 
 # Let's add in injury duration
@@ -376,7 +383,7 @@ fit = ols('NPV ~ WAR_sq + Age + Qual + injury_duration + FBv + pos_dummy', data=
 fit.summary()
 
 # Kpct
-fit = ols('NPV ~ Age + Qual + injury_duration + FBv + Kpct + pos_dummy', data=train_data_pitcher).fit()
+fit = ols('NPV ~ WAR_sq + Age + Qual + injury_duration + FBv + Kpct + pos_dummy + BBpct', data=train_data_pitcher).fit()
 fit.summary()
 
 # CBv
@@ -396,3 +403,47 @@ fit_rate_multi = ols(
 fit_rate_multi.summary()
 
 # Change position and Season to random effect
+
+batter_grp = batter_merged.groupby(['Season']).agg({
+    'NPV': sum,
+    'WAR': sum,
+    'Name': 'nunique'
+}).reset_index()
+
+batter_grp['NPV'] = batter_grp['NPV'] / 1000000
+
+fig = plotly_express.bar(batter_grp, x="Season", y="NPV",
+                         color_continuous_scale=plotly_express.colors.qualitative.D3,
+                         title="Yearly total NPV and total WAR")
+fig.add_trace(go.Scatter(x=batter_grp['Season'], y=batter_grp['WAR'], line=dict(color='red'), name='WAR'),
+              row=1, col=1)
+fig.show()
+
+
+# Create figure with secondary y-axis
+fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+# Add traces
+fig.add_trace(
+    go.Bar(x=batter_grp['Season'], y=batter_grp['NPV'], name="NPV total"),
+    secondary_y=False,
+)
+
+fig.add_trace(
+    go.Scatter(x=batter_grp['Season'], y=batter_grp['WAR'], name="WAR total"),
+    secondary_y=True,
+)
+
+# Add figure title
+fig.update_layout(
+    title_text="Yearly total NPV and total WAR"
+)
+
+# Set x-axis title
+fig.update_xaxes(title_text="Off-Season Year")
+
+# Set y-axes titles
+fig.update_yaxes(title_text="<b>NPV</b> total ($ Millions)", secondary_y=False)
+fig.update_yaxes(title_text="<b>WAR</b> total", secondary_y=True)
+
+fig.show()
