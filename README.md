@@ -1,6 +1,6 @@
 # MLB_FA
 
-Analysis of recent MLB Free agent signings
+Analysis of recent MLB Free agent signings -- predicting the value of contracts signed in the 2020-2021 MLB offseason
 
 Data Scraping:
 - Player Metrics from fangraphs --> fg_scrape.py
